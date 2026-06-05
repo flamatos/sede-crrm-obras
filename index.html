@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#004C3C">
+<title>Sede Operacional da CRRM — Obras Civis | Recicla+ Ribeirão Preto (LIR/MMA)</title>
+<meta name="description" content="Implantação da Sede Operacional (galpão de triagem ≈386,60 m²) da Cooperativa Recicla Ribeirão MRM — proposta de obras civis via Lei de Incentivo à Reciclagem (LIR/MMA). Programa 2025-00001.">
+<meta property="og:title" content="Sede Operacional da CRRM — Obras Civis (LIR/MMA)">
+<meta property="og:description" content="Um galpão para transformar triagem em renda, dignidade e economia circular. Apoie com dedução fiscal no IR.">
+<meta property="og:type" content="website">
+
+<!-- Fontes oficiais Recicla+: Dosis (display) + Archivo (corpo). Self-host recomendado em /public/fonts; CDN com fallback abaixo. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ====================================================================
+   RECICLA+ NEXUS — Identidade Visual Oficial (INVIOLÁVEL)
+   Paleta: Verde Oceano (cor-mãe) + Amarelo Sol (acento) + neutros Prata/Cinza
+   Tipografia: Dosis (display) / Archivo (corpo)
+   ==================================================================== */
+:root{
+  /* Verde Oceano */
+  --oc-900:#004C3C; --oc-800:#014435; --oc-700:#013B2D; --oc-600:#023326;
+  /* Amarelo Sol */
+  --sol-500:#F9B114; --sol-400:#FABA2C; --sol-300:#FAC444; --sol-200:#FBCD5C;
+  /* Apoio */
+  --verde-montanha:#149E5A; --turquesa:#12B0A3; --indigo:#5671C4;
+  --berinjela:#6E4C75; --abobora:#FA6E37; --mogno:#C53A33;
+  /* Neutros — Prata Metálico (claros) */
+  --prata-100:#F4F4F4; --prata-200:#EDEDED; --prata-300:#E8E8E8; --prata-400:#E3E3E3;
+  /* Neutros — Cinza Composto (escuros) */
+  --cinza-900:#1C1F26; --cinza-800:#20232B; --cinza-700:#242730; --cinza-600:#282C36;
+
+  /* Semânticos */
+  --bg:#F7FAF8;
+  --tinta:#1C2B24;
+  --texto:#384842;
+  --suave:#6B7C74;
+  --card:#FFFFFF;
+  --linha:#E4EFE9;
+  --linha-forte:#D4E5DC;
+  --verde-claro:#EAF4EF;
+  --verde-claro-2:#F1F8F4;
+  --sombra-sm:0 2px 8px rgba(1,59,45,.06);
+  --sombra:0 10px 30px -8px rgba(1,59,45,.16);
+  --sombra-lg:0 24px 60px -18px rgba(1,59,45,.30);
+  --radius:18px;
+  --radius-lg:26px;
+  --grad-marca:linear-gradient(135deg,var(--oc-900) 0%,var(--oc-700) 55%,#0a6b50 100%);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Archivo',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  color:var(--texto);background:var(--bg);line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  font-size:17px;
+}
+h1,h2,h3,h4,.display{font-family:'Dosis','Archivo',system-ui,sans-serif;color:var(--oc-900);letter-spacing:-.01em}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+a{color:var(--oc-800)}
+img,svg{max-width:100%}
+::selection{background:var(--sol-300);color:var(--oc-900)}
+
+/* ---------- Eyebrow / divisores ---------- */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Archivo';font-weight:700;font-size:12.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--verde-montanha);margin-bottom:14px;
+}
+.eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:var(--sol-500)}
+.rule{width:64px;height:4px;border-radius:4px;background:var(--sol-500);margin:14px auto 0}
+
+/* ====================================================================
+   TOPBAR
+   ==================================================================== */
+.topbar{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);
+  backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid var(--linha);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .logo{width:40px;height:40px;flex:none}
+.brand .name{font-family:'Dosis';font-weight:800;font-size:21px;color:var(--oc-900);line-height:1}
+.brand .name small{display:block;font-family:'Archivo';font-weight:600;font-size:10.5px;letter-spacing:.12em;color:var(--suave);text-transform:uppercase;margin-top:3px}
+.nav{display:flex;gap:6px;align-items:center}
+.nav a{font-weight:600;font-size:14.5px;color:var(--oc-800);text-decoration:none;padding:8px 12px;border-radius:10px;transition:.18s}
+.nav a:hover{background:var(--verde-claro);color:var(--oc-900)}
+.nav .nav-cta{background:var(--oc-900);color:#fff;padding:10px 18px}
+.nav .nav-cta:hover{background:var(--oc-800)}
+@media(max-width:880px){.nav a:not(.nav-cta){display:none}}
+
+/* ====================================================================
+   BOTÕES
+   ==================================================================== */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+  font-family:'Archivo';font-weight:700;font-size:16px;
+  padding:15px 28px;border-radius:14px;text-decoration:none;border:0;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.btn svg{width:18px;height:18px}
+.btn-sol{background:var(--sol-500);color:var(--oc-900);box-shadow:0 10px 26px -8px rgba(249,177,20,.6)}
+.btn-sol:hover{transform:translateY(-2px);box-shadow:0 16px 34px -8px rgba(249,177,20,.7);background:var(--sol-400)}
+.btn-light{background:#fff;color:var(--oc-900);box-shadow:var(--sombra)}
+.btn-light:hover{transform:translateY(-2px)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+.btn-ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+.btn-dark{background:var(--oc-900);color:#fff;box-shadow:var(--sombra)}
+.btn-dark:hover{background:var(--oc-800);transform:translateY(-2px)}
+
+/* ====================================================================
+   HERO
+   ==================================================================== */
+.hero{position:relative;overflow:hidden;background:var(--grad-marca);color:#fff;padding:96px 0 110px}
+.hero::before{
+  content:"";position:absolute;inset:0;opacity:.5;
+  background:
+    radial-gradient(900px 500px at 82% 8%,rgba(20,158,90,.45),transparent 60%),
+    radial-gradient(700px 600px at 12% 100%,rgba(18,176,163,.30),transparent 60%);
+}
+/* selo/marca-d'água do símbolo */
+.hero .watermark{position:absolute;right:-80px;bottom:-90px;width:480px;opacity:.07;color:#fff;pointer-events:none}
+.hero .wrap{position:relative;z-index:2;max-width:920px;text-align:center}
+.hero .pill{
+  display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.28);border-radius:999px;
+  padding:8px 16px;font-weight:600;font-size:13px;letter-spacing:.04em;color:#eafaf2;margin-bottom:26px;
+}
+.hero .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--sol-400);box-shadow:0 0 0 4px rgba(250,186,44,.25)}
+.hero h1{font-size:clamp(34px,5.6vw,62px);font-weight:800;color:#fff;line-height:1.05;letter-spacing:-.02em}
+.hero h1 .accent{color:var(--sol-400)}
+.hero .tag{font-size:clamp(17px,2.3vw,22px);font-weight:500;color:#dff3ea;margin:22px auto 8px;max-width:680px;line-height:1.5}
+.hero .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin-top:24px;font-size:13.5px;color:#bfe3d4}
+.hero .meta span{display:inline-flex;align-items:center;gap:7px}
+.hero .meta span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--sol-400)}
+.hero .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+
+/* faixa de KPIs sob o hero */
+.hero-stats{position:relative;z-index:3;max-width:980px;margin:-56px auto 0;padding:0 24px}
+.hero-stats .inner{
+  background:#fff;border-radius:var(--radius-lg);box-shadow:var(--sombra-lg);
+  display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;
+}
+.hero-stats .s{padding:26px 22px;text-align:center;border-right:1px solid var(--linha)}
+.hero-stats .s:last-child{border-right:0}
+.hero-stats .s .n{font-family:'Dosis';font-weight:800;font-size:clamp(24px,3vw,34px);color:var(--oc-900);line-height:1}
+.hero-stats .s .l{font-size:12.5px;color:var(--suave);margin-top:8px;line-height:1.35}
+@media(max-width:780px){.hero-stats .inner{grid-template-columns:1fr 1fr}.hero-stats .s:nth-child(2){border-right:0}.hero-stats .s:nth-child(1),.hero-stats .s:nth-child(2){border-bottom:1px solid var(--linha)}}
+
+/* ====================================================================
+   SECTIONS
+   ==================================================================== */
+section{padding:84px 0}
+.sec-head{text-align:center;max-width:760px;margin:0 auto 48px}
+.sec-head h2{font-size:clamp(28px,3.8vw,42px);font-weight:800;line-height:1.12}
+.sec-head .lead{color:var(--suave);margin-top:16px;font-size:17.5px}
+.sec-head .eyebrow{margin-left:auto;margin-right:auto}
+
+.panel{background:linear-gradient(180deg,var(--verde-claro-2),var(--verde-claro));border:1px solid var(--linha);border-radius:var(--radius-lg);padding:64px 0}
+.panel-dark{background:var(--grad-marca);color:#fff;border-radius:var(--radius-lg);padding:64px 0;position:relative;overflow:hidden}
+.panel-dark .sec-head h2{color:#fff}.panel-dark .sec-head .lead{color:#cfe9de}.panel-dark .eyebrow{color:var(--sol-300)}
+
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+
+/* ---------- Cards ---------- */
+.card{
+  background:var(--card);border:1px solid var(--linha);border-radius:var(--radius);
+  padding:28px;box-shadow:var(--sombra-sm);transition:transform .22s ease,box-shadow .22s ease,border-color .22s;
+  position:relative;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sombra);border-color:var(--linha-forte)}
+.card .ic{
+  width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+}
+.card .ic svg{width:26px;height:26px}
+.ic-oc{background:var(--verde-claro);color:var(--oc-900)}
+.ic-sol{background:#FFF4D6;color:#9a6b00}
+.ic-teal{background:#DBF6F3;color:#0c7d73}
+.ic-indigo{background:#E4E9F8;color:#3a4f9e}
+.ic-abobora{background:#FFE6D9;color:#c1481f}
+.card .role{font-family:'Archivo';font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--verde-montanha);margin-bottom:6px}
+.card h3{font-size:21px;font-weight:700;margin-bottom:10px;line-height:1.2}
+.card p{font-size:15.5px;color:var(--texto)}
+.card .muted{color:var(--suave);font-size:14px;margin-top:6px}
+
+/* ---------- KPI cards ---------- */
+.kpi{text-align:center;border-top:4px solid var(--sol-500)}
+.kpi .num{font-family:'Dosis';font-size:clamp(30px,4vw,40px);font-weight:800;color:var(--oc-900);line-height:1.05}
+.kpi .lbl{font-size:14px;color:var(--suave);margin-top:10px}
+
+/* ====================================================================
+   TABELA DA OBRA
+   ==================================================================== */
+.table-wrap{background:#fff;border:1px solid var(--linha);border-radius:var(--radius);overflow:hidden;box-shadow:var(--sombra)}
+table.obra{width:100%;border-collapse:collapse;font-size:15px}
+table.obra thead th{
+  background:var(--oc-900);color:#fff;font-family:'Archivo';font-weight:600;font-size:12.5px;
+  letter-spacing:.07em;text-transform:uppercase;padding:16px 18px;text-align:left;
+}
+table.obra tbody td{padding:13px 18px;border-bottom:1px solid var(--linha);vertical-align:top}
+table.obra tbody tr:nth-child(even){background:var(--verde-claro-2)}
+table.obra tbody tr:hover{background:#FFF8E6}
+table.obra td.code{font-family:'Dosis';font-weight:700;color:var(--verde-montanha);white-space:nowrap;width:56px}
+table.obra td.r,table.obra th.r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+table.obra tfoot td{padding:18px;background:var(--oc-900);color:#fff;font-weight:700}
+table.obra tfoot td.r{font-family:'Dosis';font-size:19px;color:var(--sol-400)}
+.barcell{position:relative}
+.bar{height:5px;border-radius:4px;background:linear-gradient(90deg,var(--verde-montanha),var(--turquesa));margin-top:7px;opacity:.85}
+
+/* ====================================================================
+   ETAPAS (timeline)
+   ==================================================================== */
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;position:relative}
+.steps::before{content:"";position:absolute;top:26px;left:8%;right:8%;height:3px;background:repeating-linear-gradient(90deg,var(--linha-forte) 0 10px,transparent 10px 18px);z-index:0}
+.step{position:relative;z-index:1;text-align:center}
+.step .n{
+  width:54px;height:54px;border-radius:50%;margin:0 auto 14px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Dosis';font-weight:800;font-size:22px;color:#fff;
+  background:var(--grad-marca);box-shadow:0 8px 20px -6px rgba(1,59,45,.5);border:4px solid var(--bg);
+}
+.step b{display:block;font-family:'Dosis';font-weight:700;font-size:16px;color:var(--oc-900)}
+.step small{color:var(--suave);font-size:13px}
+
+/* ====================================================================
+   LIR / INCENTIVO — destaque
+   ==================================================================== */
+.lir-card{background:#fff;border-radius:var(--radius);padding:30px;border:1px solid rgba(255,255,255,.4)}
+.lir-card .pct{font-family:'Dosis';font-weight:800;font-size:46px;color:var(--oc-900);line-height:1}
+.lir-card .who{font-weight:700;color:var(--verde-montanha);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.note{
+  display:flex;gap:14px;align-items:flex-start;margin-top:30px;
+  background:rgba(249,177,20,.14);border:1px solid rgba(249,177,20,.45);
+  border-radius:14px;padding:18px 20px;color:#7a5b13;font-size:15px;
+}
+.note svg{width:24px;height:24px;flex:none;color:var(--sol-500);margin-top:1px}
+.panel-dark .note{background:rgba(250,186,44,.16);border-color:rgba(250,186,44,.45);color:#fdeec6}
+.panel-dark .note svg{color:var(--sol-300)}
+
+/* ====================================================================
+   DADOS OFICIAIS
+   ==================================================================== */
+.dados{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.dado{background:#fff;border:1px solid var(--linha);border-left:4px solid var(--oc-900);border-radius:12px;padding:18px 20px;box-shadow:var(--sombra-sm)}
+.dado .k{font-size:11.5px;color:var(--suave);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.dado .v{font-weight:600;margin-top:5px;color:var(--tinta);font-size:15.5px;line-height:1.45}
+.badge{display:inline-block;background:var(--verde-claro);color:var(--oc-900);font-weight:700;padding:3px 11px;border-radius:999px;font-size:11.5px;margin-left:6px;border:1px solid var(--linha-forte)}
+
+/* logos reais */
+.brand .logo-img{height:42px;width:auto;display:block}
+.card-logo{width:auto;display:block;margin-bottom:18px;object-fit:contain}
+.seals{margin-top:40px}
+.seals .seals-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:28px 44px;background:#fff;border:1px solid var(--linha);border-radius:var(--radius);padding:26px 28px;box-shadow:var(--sombra-sm)}
+.seals .seals-row img{height:46px;width:auto;object-fit:contain}
+.seals .seals-row .lir-seal{height:62px}
+.seals .cap{text-align:center;color:var(--suave);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-bottom:14px}
+/* bloco bancário / placeholder */
+.bank{background:#fff;border:1.5px dashed var(--linha-forte);border-radius:var(--radius);padding:26px 28px;margin-top:26px;display:flex;gap:18px;align-items:flex-start}
+.bank .ic{width:48px;height:48px;border-radius:12px;background:var(--verde-claro);color:var(--oc-900);display:flex;align-items:center;justify-content:center;flex:none}
+.bank .ic svg{width:24px;height:24px}
+.bank h4{font-family:'Dosis';font-weight:700;font-size:18px;color:var(--oc-900);margin-bottom:4px}
+.bank .ph{display:inline-block;margin-top:10px;background:#FFF4D6;color:#9a6b00;font-weight:700;padding:6px 14px;border-radius:8px;font-size:14px}
+
+/* ====================================================================
+   CTA FINAL + FOOTER
+   ==================================================================== */
+.cta-final{background:var(--grad-marca);color:#fff;border-radius:var(--radius-lg);text-align:center;padding:66px 28px;position:relative;overflow:hidden;margin-bottom:0}
+.cta-final::before{content:"";position:absolute;inset:0;opacity:.4;background:radial-gradient(600px 400px at 50% -10%,rgba(250,186,44,.30),transparent 60%)}
+.cta-final>*{position:relative;z-index:1}
+.cta-final h2{color:#fff;font-size:clamp(26px,3.6vw,38px);font-weight:800}
+.cta-final p{color:#d8f0e6;max-width:560px;margin:14px auto 30px;font-size:17px}
+.cta-final .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+footer.site{background:var(--cinza-900);color:#aeb9c2;padding:54px 0 40px;font-size:14.5px}
+footer.site .top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.08)}
+footer.site .brand .name{color:#fff}
+footer.site .brand .name small{color:#7f8a93}
+footer.site .cols{display:flex;gap:48px;flex-wrap:wrap}
+footer.site .col h5{font-family:'Dosis';font-weight:700;color:#fff;font-size:15px;margin-bottom:10px;letter-spacing:.04em}
+footer.site .col p,footer.site .col a{color:#aeb9c2;text-decoration:none;font-size:13.5px;display:block;margin-bottom:5px}
+footer.site .col a:hover{color:var(--sol-300)}
+footer.site .bottom{padding-top:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#7f8a93}
+
+/* ====================================================================
+   RESPONSIVO
+   ==================================================================== */
+@media(max-width:980px){
+  .g4{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr 1fr}.steps::before{display:none}
+}
+@media(max-width:760px){
+  section{padding:60px 0}
+  .g2,.g3{grid-template-columns:1fr}
+  .dados{grid-template-columns:1fr}
+  .panel,.panel-dark{padding:48px 0}
+  footer.site .top{flex-direction:column}
+}
+@media(max-width:560px){
+  .g4,.steps{grid-template-columns:1fr 1fr}
+  table.obra{font-size:13.5px}
+  table.obra thead th,table.obra tbody td{padding:11px 12px}
+  .hero{padding:72px 0 96px}
+}
+
+/* ====================================================================
+   HERO COM FOTO DE FUNDO (overlay Verde Oceano)
+   ==================================================================== */
+.hero{
+  background:
+    linear-gradient(135deg,rgba(0,76,60,.92) 0%,rgba(1,59,45,.86) 55%,rgba(10,107,80,.80) 100%),
+    url("assets/fotos/foto01.jpg") center 30%/cover no-repeat,
+    var(--grad-marca);
+}
+
+/* ====================================================================
+   GALERIA "O Projeto em Ação" + LIGHTBOX
+   ==================================================================== */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery .shot{
+  position:relative;display:block;border:0;padding:0;cursor:zoom-in;
+  border-radius:var(--radius);overflow:hidden;box-shadow:var(--sombra-sm);
+  aspect-ratio:4/3;background:var(--verde-claro);
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.gallery .shot:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
+.gallery .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.gallery .shot:hover img{transform:scale(1.06)}
+.gallery .shot figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(0deg,rgba(1,59,45,.88),transparent);
+  color:#fff;font-family:'Archivo';font-weight:700;font-size:13.5px;
+  padding:26px 14px 12px;text-align:left;letter-spacing:.01em;
+}
+@media(max-width:880px){.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.gallery{grid-template-columns:1fr}}
+
+.lightbox{
+  position:fixed;inset:0;z-index:200;display:none;
+  background:rgba(2,30,22,.92);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:28px;
+}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:84vh;border-radius:14px;box-shadow:var(--sombra-lg)}
+.lightbox .lb-cap{position:absolute;bottom:24px;left:0;right:0;text-align:center;color:#eafaf2;font-weight:600;font-size:15px}
+.lightbox .lb-close{
+  position:absolute;top:22px;right:26px;width:46px;height:46px;border-radius:50%;
+  background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.4);color:#fff;
+  font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;
+}
+.lightbox .lb-close:hover{background:rgba(255,255,255,.26)}
+.lightbox .lb-nav{
+  position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;
+  background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.4);color:#fff;
+  font-size:26px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;
+}
+.lightbox .lb-nav:hover{background:rgba(255,255,255,.26)}
+.lightbox .lb-prev{left:22px}.lightbox .lb-next{right:22px}
+@media(max-width:560px){.lightbox .lb-nav{width:42px;height:42px;font-size:22px}}
+
+/* ====================================================================
+   BENEFÍCIOS PARA EMPRESAS INCENTIVADORAS
+   ==================================================================== */
+.benef .card{border-top:4px solid var(--sol-500)}
+.benef .card h3{font-size:19px}
+
+/* ====================================================================
+   COMO APOIAR / DOAÇÃO (passos)
+   ==================================================================== */
+.howto{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.howto .col-doar{background:#fff;border:1px solid var(--linha);border-radius:var(--radius);padding:30px;box-shadow:var(--sombra-sm)}
+.howto .col-doar .tag-doar{display:inline-block;background:var(--verde-claro);color:var(--oc-900);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:5px 13px;border-radius:999px;border:1px solid var(--linha-forte);margin-bottom:14px}
+.howto .col-doar h3{font-size:22px;margin-bottom:6px}
+.howto .col-doar .big{font-family:'Dosis';font-weight:800;font-size:38px;color:var(--oc-900);line-height:1;margin-bottom:14px}
+.howto .col-doar .big small{font-family:'Archivo';font-weight:600;font-size:15px;color:var(--suave)}
+.howto ol{list-style:none;counter-reset:passo;margin-top:8px}
+.howto ol li{counter-increment:passo;position:relative;padding:12px 0 12px 44px;border-bottom:1px solid var(--linha)}
+.howto ol li:last-child{border-bottom:0}
+.howto ol li::before{
+  content:counter(passo);position:absolute;left:0;top:11px;width:30px;height:30px;border-radius:50%;
+  background:var(--grad-marca);color:#fff;font-family:'Dosis';font-weight:800;font-size:15px;
+  display:flex;align-items:center;justify-content:center;
+}
+.howto ol li b{color:var(--oc-900)}
+.howto ol li small{display:block;color:var(--suave);font-size:13.5px;margin-top:2px}
+@media(max-width:760px){.howto{grid-template-columns:1fr}}
+
+/* link "visitar website" nos cards de parceiro */
+.card .site-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-weight:700;font-size:13.5px;color:var(--oc-800);text-decoration:none}
+.card .site-link svg{width:14px;height:14px}
+.card .site-link:hover{color:var(--verde-montanha)}
+
+/* ====================================================================
+   WHATSAPP FLUTUANTE
+   ==================================================================== */
+.wa-float{
+  position:fixed;right:22px;bottom:22px;z-index:120;
+  display:flex;align-items:center;gap:10px;
+  background:#25D366;color:#0a3a23;font-family:'Archivo';font-weight:700;font-size:15px;
+  text-decoration:none;padding:13px 18px 13px 14px;border-radius:999px;
+  box-shadow:0 14px 34px -8px rgba(37,211,102,.7);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.wa-float:hover{transform:translateY(-3px);box-shadow:0 20px 40px -8px rgba(37,211,102,.8)}
+.wa-float svg{width:26px;height:26px;flex:none}
+.wa-float .lbl{white-space:nowrap}
+@media(max-width:560px){.wa-float{right:16px;bottom:16px;padding:13px}.wa-float .lbl{display:none}}
+
+/* botão WhatsApp inline (verde whats) */
+.btn-wa{background:#25D366;color:#0a3a23;box-shadow:0 10px 26px -8px rgba(37,211,102,.6)}
+.btn-wa:hover{background:#20c25d;transform:translateY(-2px)}
+
+/* ====================================================================
+   IMPRESSÃO / SALVAR COMO PDF
+   ==================================================================== */
+@media print{
+  .topbar,.wa-float,.hero .actions,.cta-final .actions,.gallery .shot:nth-child(n+5),
+  .lightbox,.nav,.btn-ghost{display:none !important}
+  .hero{background:var(--oc-900) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section{padding:24px 0;break-inside:avoid}
+  .card,.table-wrap,.panel,.panel-dark{break-inside:avoid}
+  a[href]::after{content:""}
+  body{font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================== TOPBAR ============================== -->
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img class="logo-img" src="assets/reciclamais.png" alt="Instituto Recicla+ Ribeirão Preto">
+    </a>
+    <nav class="nav">
+      <a href="#objeto">Objeto</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#lir">Incentivo Fiscal</a>
+      <a href="#como-apoiar">Como apoiar</a>
+      <a href="#dados">Dados Oficiais</a>
+      <a class="nav-cta" href="#contato">Apoiar o projeto</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============================== HERO ============================== -->
+<header class="hero" id="top">
+  <!-- marca-d'água do símbolo -->
+  <svg class="watermark" viewBox="0 0 64 64" aria-hidden="true">
+    <path d="M32 8l9 15.6H23L32 8z" fill="currentColor"/>
+    <path d="M50.2 39.4l-9 15.6-8.9-5.2 9-15.6 8.9 5.2z" fill="currentColor"/>
+    <path d="M13.8 39.4l9-5.2 9 15.6-9 5.2-9-15.6z" fill="currentColor"/>
+  </svg>
+  <div class="wrap">
+    <span class="pill"><span class="dot"></span> Lei de Incentivo à Reciclagem · MMA · Programa 2025-00001</span>
+    <h1>Sede Operacional da <span class="accent">CRRM</span><br>Obras Civis</h1>
+    <p class="tag">Um galpão de triagem para transformar resíduo em renda, dignidade e economia circular — a sede própria da cooperativa de catadores de Ribeirão Preto.</p>
+    <div class="meta">
+      <span>Portaria GM/MMA nº 1.250/2024</span>
+      <span>Art. 24, II — propostas com obras civis</span>
+      <span>Proposta complementar de infraestrutura física</span>
+    </div>
+    <div class="actions">
+      <a class="btn btn-sol" href="#lir">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg>
+        Apoiar com dedução no IR
+      </a>
+      <a class="btn btn-wa" href="https://wa.me/5516992884284?text=Ol%C3%A1!%20Quero%20apoiar%20a%20Sede%20Operacional%20da%20CRRM%20(LIR%2FMMA)." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.84 9.84 0 0 0 12.04 2zm5.8 14.13c-.25.7-1.44 1.33-1.99 1.41-.53.08-1.18.11-1.9-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5-4.35-5.16-4.56-.15-.2-1.24-1.64-1.24-3.13s.78-2.22 1.06-2.53c.27-.3.6-.38.8-.38l.57.01c.18.01.43-.07.67.51.25.6.85 2.08.92 2.23.07.15.12.32.02.52-.1.2-.15.32-.3.49l-.45.52c-.15.15-.3.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.48.13.66-.08.18-.2.76-.89.96-1.19.2-.3.4-.25.67-.15.27.1 1.71.81 2 .96.3.15.5.22.57.34.07.13.07.73-.18 1.42z"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="#galeria">Conhecer o projeto</a>
+    </div>
+  </div>
+</header>
+
+<!-- faixa de KPIs -->
+<div class="hero-stats">
+  <div class="inner">
+    <div class="s"><div class="n">≈386,60 m²</div><div class="l">Galpão de triagem e beneficiamento</div></div>
+    <div class="s"><div class="n">R$ 1,69 mi</div><div class="l">Infraestrutura física (Meta IV)</div></div>
+    <div class="s"><div class="n">336 t/ano</div><div class="l">Meta operacional (~28 t/mês)</div></div>
+    <div class="s"><div class="n">50%</div><div class="l">Captação mínima (Art. 24, II)</div></div>
+  </div>
+</div>
+
+<!-- ============================== RESUMO (3 PAPÉIS) ============================== -->
+<section id="resumo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Resumo da proposta</span>
+      <h2>Três instituições, uma sede própria</h2>
+      <p class="lead">Esta proposta financia as <b>obras civis de implantação da Sede Operacional</b> da Cooperativa Recicla Ribeirão MRM — um galpão de triagem, beneficiamento e armazenamento de recicláveis, viabilizado pela Lei de Incentivo à Reciclagem (LIR/MMA).</p>
+    </div>
+    <div class="grid g3">
+      <article class="card">
+        <img class="card-logo" src="assets/wteec.png" alt="WTEEC Engenharia" style="height:30px">
+        <div class="role">Proponente · Coordenador</div>
+        <h3>WTEEC Engenharia</h3>
+        <p>Coordenação geral, gestão técnica e financeira e prestação de contas junto ao MMA.</p>
+      </article>
+      <article class="card">
+        <img class="card-logo" src="assets/habisolute.png" alt="Habisolute Engenharia" style="height:28px">
+        <div class="role">Empreiteira · Execução</div>
+        <h3>Habisolute Engenharia</h3>
+        <p>Execução das obras civis, responsabilidade técnica e emissão da ART. Certificada PBQP-H.</p>
+      </article>
+      <article class="card">
+        <img class="card-logo" src="assets/crrm.png" alt="CRRM — Cooperativa Recicla Ribeirão MRM" style="height:48px">
+        <div class="role">Beneficiária · Operadora</div>
+        <h3>CRRM</h3>
+        <p>Cooperativa Recicla Ribeirão MRM: operação do galpão — coleta, triagem e comercialização.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== OBJETO + KPIs ============================== -->
+<section id="objeto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Objeto da proposta</span>
+      <h2>O galpão que dá escala à reciclagem</h2>
+      <p class="lead">Construção da sede própria da CRRM — galpão industrial de aproximadamente <b>386,60 m²</b> para triagem e beneficiamento de recicláveis, com condições dignas e seguras de trabalho, em conformidade com as normas técnicas e a Portaria GM/MMA nº 1.250/2024.</p>
+    </div>
+    <div class="grid g4">
+      <div class="card kpi"><div class="num">≈386,60 m²</div><div class="lbl">Área do galpão de triagem e beneficiamento</div></div>
+      <div class="card kpi"><div class="num">336 t/ano</div><div class="lbl">Meta operacional (~28 t/mês) após consolidação</div></div>
+      <div class="card kpi"><div class="num">R$ 1,69 mi</div><div class="lbl">Investimento em infraestrutura física (Meta IV)</div></div>
+      <div class="card kpi"><div class="num">Sede própria</div><div class="lbl">Inclusão produtiva e autonomia da cooperativa</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== GALERIA "O PROJETO EM AÇÃO" ============================== -->
+<section id="galeria">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Registros reais</span>
+      <h2>📸 O Projeto em Ação</h2>
+      <p class="lead">A operação Recicla+ em Ribeirão Preto — coleta seletiva, triagem, Recicla+BOX e educação ambiental que dão lastro real a esta proposta de obras civis. Clique para ampliar.</p>
+    </div>
+    <div class="gallery" id="gallery">
+      <figure class="shot" data-full="assets/fotos/foto01.jpg" data-cap="Operação Recicla+"><img src="assets/fotos/foto01.jpg" alt="Operação Recicla+ — equipe em campo" loading="lazy"><figcaption>Operação Recicla+</figcaption></figure>
+      <figure class="shot" data-full="assets/fotos/foto02.jpg" data-cap="Recicla+BOX"><img src="assets/fotos/foto02.jpg" alt="Recicla+BOX — ponto de coleta" loading="lazy"><figcaption>Recicla+BOX</figcaption></figure>
+      <figure class="shot" data-full="assets/fotos/foto03.jpg" data-cap="Ponto de coleta em evento"><img src="assets/fotos/foto03.jpg" alt="Recicla+BOX em evento esportivo" loading="lazy"><figcaption>Ponto de coleta em evento</figcaption></figure>
+      <figure class="shot" data-full="assets/fotos/foto04.jpg" data-cap="Coleta seletiva"><img src="assets/fotos/foto04.jpg" alt="Recicla+BOX com separação de recicláveis" loading="lazy"><figcaption>Coleta seletiva</figcaption></figure>
+      <figure class="shot" data-full="assets/fotos/foto05.jpg" data-cap="Educação ambiental"><img src="assets/fotos/foto05.jpg" alt="Ação de educação ambiental" loading="lazy"><figcaption>Educação ambiental</figcaption></figure>
+      <figure class="shot" data-full="assets/fotos/foto06.jpg" data-cap="Condomínio empresarial"><img src="assets/fotos/foto06.jpg" alt="Recicla+BOX em condomínio empresarial" loading="lazy"><figcaption>Condomínio empresarial</figcaption></figure>
+      <figure class="shot" data-full="assets/fotos/foto07.jpg" data-cap="Recicla+ na CASACOR"><img src="assets/fotos/foto07.jpg" alt="Recicla+ na CASACOR Ribeirão Preto" loading="lazy"><figcaption>Recicla+ na CASACOR</figcaption></figure>
+      <figure class="shot" data-full="assets/fotos/foto08.jpg" data-cap="Coleta em condomínio"><img src="assets/fotos/foto08.jpg" alt="Pontos de coleta Recicla+BOX em condomínio" loading="lazy"><figcaption>Coleta em condomínio</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ESCOPO DA OBRA ============================== -->
+<section id="escopo">
+  <div class="wrap">
+    <div class="panel">
+      <div class="wrap" style="padding:0 40px">
+        <div class="sec-head">
+          <span class="eyebrow">Meta IV · Infraestrutura física</span>
+          <h2>Escopo da obra — 13 itens</h2>
+          <p class="lead">Orçamento por etapa construtiva, com base na tabela SINAPI, conforme o Plano de Trabalho.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="obra">
+            <thead>
+              <tr><th>Item</th><th>Etapa construtiva</th><th class="r">Valor (R$)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="code">IV.1</td><td>Serviços preliminares e canteiro de obra</td><td class="r">13.249,88</td></tr>
+              <tr><td class="code">IV.2</td><td>Terraplenagem, locação e regularização do terreno</td><td class="r">37.233,51</td></tr>
+              <tr><td class="code">IV.3</td><td class="barcell">Fundação (brocas, blocos, concreto, armadura, impermeabilização)<div class="bar" style="width:83%"></div></td><td class="r">256.636,83</td></tr>
+              <tr><td class="code">IV.4</td><td class="barcell">Muros de divisa e reforços estruturais<div class="bar" style="width:52%"></div></td><td class="r">159.891,83</td></tr>
+              <tr><td class="code">IV.5</td><td>Alvenaria e vedações<div class="bar" style="width:31%"></div></td><td class="r">96.221,58</td></tr>
+              <tr><td class="code">IV.6</td><td>Mezanino metálico<div class="bar" style="width:7%"></div></td><td class="r">20.272,54</td></tr>
+              <tr><td class="code">IV.7</td><td class="barcell">Estrutura metálica e cobertura (galvalume)<div class="bar" style="width:63%"></div></td><td class="r">195.955,56</td></tr>
+              <tr><td class="code">IV.8</td><td>Instalações hidrossanitárias e pluviais<div class="bar" style="width:41%"></div></td><td class="r">128.265,54</td></tr>
+              <tr><td class="code">IV.9</td><td class="barcell">Instalações elétricas e SPDA<div class="bar" style="width:80%"></div></td><td class="r">246.611,99</td></tr>
+              <tr><td class="code">IV.10</td><td>Prevenção e combate a incêndio<div class="bar" style="width:17%"></div></td><td class="r">53.654,48</td></tr>
+              <tr><td class="code">IV.11</td><td class="barcell">Revestimentos, pisos e impermeabilização<div class="bar" style="width:100%"></div></td><td class="r">310.290,86</td></tr>
+              <tr><td class="code">IV.12</td><td>Esquadrias (portas, portões e janelas)<div class="bar" style="width:43%"></div></td><td class="r">134.136,27</td></tr>
+              <tr><td class="code">IV.13</td><td>Administração local da obra (mestre e eng. residente)<div class="bar" style="width:12%"></div></td><td class="r">37.579,13</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td colspan="2">Subtotal — Infraestrutura Física (Meta IV)</td><td class="r">R$ 1.690.000,00</td></tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="note" style="margin-top:24px">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <div>Metas administrativas (custeio — coordenação, ART/RRT, fiscalização, auditoria, contabilidade e comunicação): <b>R$ 165.000,00</b>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ETAPAS DA EXECUÇÃO ============================== -->
+<section id="etapas">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Cronograma construtivo</span>
+      <h2>Etapas da execução</h2>
+      <p class="lead">Sequência sob coordenação da WTEEC e execução da Habisolute Engenharia.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><b>Preliminares</b><small>Canteiro e locação</small></div>
+      <div class="step"><div class="n">2</div><b>Terraplenagem</b><small>Regularização do terreno</small></div>
+      <div class="step"><div class="n">3</div><b>Fundação</b><small>Concreto e armadura</small></div>
+      <div class="step"><div class="n">4</div><b>Estrutura</b><small>Metálica + cobertura</small></div>
+      <div class="step"><div class="n">5</div><b>Instalações</b><small>Hidro · elétrica · incêndio</small></div>
+      <div class="step"><div class="n">6</div><b>Acabamento</b><small>Revestimentos · esquadrias</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== RESPONSÁVEL TÉCNICO ============================== -->
+<section id="tecnico">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Responsabilidade técnica</span>
+      <h2>Quem executa a obra</h2>
+      <p class="lead">Execução por empresa certificada e engenheiro civil com registro ativo no CREA-SP.</p>
+    </div>
+    <div class="grid g2">
+      <article class="card">
+        <img class="card-logo" src="assets/habisolute.png" alt="Habisolute Engenharia" style="height:28px">
+        <div class="role">Empreiteira</div>
+        <h3>Habisolute Engenharia e Consultoria Ltda</h3>
+        <p class="muted">CNPJ 32.933.181/0001-03 · CREA-SP nº 2277933 · Certificação PBQP-H (SIAC)</p>
+        <p style="margin-top:12px">Empresa de engenharia e construção civil de Ribeirão Preto/SP, com mais de <b>250 projetos</b> executados e laboratório próprio de controle tecnológico de concreto e solos.</p>
+      </article>
+      <article class="card">
+        <div class="ic ic-oc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0M9 12l-1 4M15 12l1 4"/></svg></div>
+        <div class="role">Responsável técnico</div>
+        <h3>Eng. Civil Régis Tiago de Lima</h3>
+        <p class="muted">CREA-SP nº 5070293050 (situação <b style="color:var(--verde-montanha)">ATIVA</b>) · Graduação UNIP — Ribeirão Preto, 2017</p>
+        <p style="margin-top:12px">Responsável pela execução da obra, com emissão da respectiva <b>ART</b>, controle de qualidade, segurança do trabalho e conformidade técnica.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== LIR / INCENTIVO FISCAL ============================== -->
+<section id="lir">
+  <div class="wrap">
+    <div class="panel-dark">
+      <div class="wrap" style="padding:0 40px">
+        <div class="sec-head">
+          <span class="eyebrow">Lei de Incentivo à Reciclagem</span>
+          <h2>Apoie a obra com dedução direta no IR</h2>
+          <p class="lead">Para propostas com obras civis, a captação mínima é de <b>50%</b> (Art. 24, II da Portaria GM/MMA nº 1.250/2024). Você redireciona parte do imposto que já pagaria.</p>
+        </div>
+        <div class="grid g3">
+          <div class="lir-card">
+            <div class="who">Pessoas Jurídicas</div>
+            <div class="pct">1%</div>
+            <p style="margin-top:8px;color:var(--texto)">Empresas no lucro real podem deduzir até <b>1% do IRPJ</b> devido.</p>
+          </div>
+          <div class="lir-card">
+            <div class="who">Pessoas Físicas</div>
+            <div class="pct">6%</div>
+            <p style="margin-top:8px;color:var(--texto)">Na declaração completa, dedução de até <b>6% do IR</b> devido.</p>
+          </div>
+          <div class="lir-card">
+            <div class="who">Transparência</div>
+            <div class="pct" style="font-size:30px;line-height:1.3">MMA<br>SINIR</div>
+            <p style="margin-top:8px;color:var(--texto)">Conta de captação específica, rastreabilidade e prestação de contas via MMA/SINIR.</p>
+          </div>
+        </div>
+        <div class="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1-6.3-4.6L5.7 21l2.3-7.1-6-4.5h7.6L12 2z"/></svg>
+          <div>O valor <b>não é despesa extra</b>: você direciona parte do IR que já pagaria para viabilizar a sede da cooperativa de catadores.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== BENEFÍCIOS PARA EMPRESAS INCENTIVADORAS ============================== -->
+<section id="beneficios" class="benef">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Por que apoiar</span>
+      <h2>💼 Benefícios para Empresas Incentivadoras</h2>
+      <p class="lead">Ao direcionar parte do IRPJ para esta obra, sua empresa gera impacto real e ainda fortalece marca, governança e conformidade fiscal.</p>
+    </div>
+    <div class="grid g3">
+      <article class="card">
+        <div class="ic ic-oc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg></div>
+        <h3>Dedução fiscal direta</h3>
+        <p>Empresas no lucro real deduzem até <b>1% do IRPJ</b> devido — sem custo adicional, redirecionando imposto que já seria pago.</p>
+      </article>
+      <article class="card">
+        <div class="ic ic-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></div>
+        <h3>Impacto socioambiental real</h3>
+        <p>Inclusão produtiva de catadores, geração de renda e economia circular em Ribeirão Preto — resultados mensuráveis (336 t/ano).</p>
+      </article>
+      <article class="card">
+        <div class="ic ic-sol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1-6.3-4.6L5.7 21l2.3-7.1-6-4.5h7.6L12 2z"/></svg></div>
+        <h3>Visibilidade de marca</h3>
+        <p>Associação a um programa oficial do MMA e a uma causa ESG concreta — reconhecimento institucional e reputacional.</p>
+      </article>
+      <article class="card">
+        <div class="ic ic-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Transparência e governança</h3>
+        <p>Conta de captação específica, vinculada e auditável pelo MMA, com rastreabilidade via SINIR.</p>
+      </article>
+      <article class="card">
+        <div class="ic ic-abobora"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
+        <h3>Prestação de contas</h3>
+        <p>Relatórios técnicos e financeiros de execução das metas, com comprovação documental junto ao Ministério.</p>
+      </article>
+      <article class="card">
+        <div class="ic ic-oc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></div>
+        <h3>Resultado duradouro</h3>
+        <p>Uma sede própria de ~386,60 m² que permanece gerando renda e impacto muito além do exercício fiscal do aporte.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== COMO APOIAR / COMO FAZER A DOAÇÃO ============================== -->
+<section id="como-apoiar">
+  <div class="wrap">
+    <div class="panel">
+      <div class="wrap" style="padding:0 40px">
+        <div class="sec-head">
+          <span class="eyebrow">Passo a passo</span>
+          <h2>💡 Como apoiar / Como fazer a doação</h2>
+          <p class="lead">A destinação ao incentivo pode ser feita por Pessoa Jurídica (lucro real) ou Pessoa Física. Veja os caminhos:</p>
+        </div>
+        <div class="howto">
+          <div class="col-doar">
+            <span class="tag-doar">Pessoa Jurídica · Lucro real</span>
+            <div class="big">até 1% <small>do IRPJ devido</small></div>
+            <ol>
+              <li><b>Durante o ano</b><small>Faça a destinação via boleto/transferência para a conta de captação da proposta e guarde o comprovante.</small></li>
+              <li><b>Na apuração / declaração</b><small>Informe o valor destinado para deduzir até 1% do IRPJ devido, conforme regras da Receita.</small></li>
+              <li><b>Prestação de contas</b><small>O MMA recebe o relatório de aplicação; sua empresa recebe o recibo da destinação.</small></li>
+            </ol>
+          </div>
+          <div class="col-doar">
+            <span class="tag-doar">Pessoa Física</span>
+            <div class="big">até 6% <small>do IR devido</small></div>
+            <ol>
+              <li><b>(a) Durante o ano</b><small>Destine via boleto/transferência ao longo do exercício e informe o valor na sua declaração de ajuste anual.</small></li>
+              <li><b>(b) Na declaração (mar–abr)</b><small>Destinação direta na própria declaração, com pagamento via DARF específico — disponível para quem usa o modelo completo.</small></li>
+              <li><b>Limite</b><small>Dedução de até 6% do imposto devido (somadas as destinações de incentivo permitidas).</small></li>
+            </ol>
+          </div>
+        </div>
+        <div class="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <div><b>Não é despesa extra</b> — você redireciona parte do Imposto de Renda que já pagaria para viabilizar a sede da cooperativa. Fale com a coordenação para receber os dados da conta de captação e o passo a passo da sua situação.</div>
+        </div>
+        <div class="actions" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px">
+          <a class="btn btn-wa" href="https://wa.me/5516992884284?text=Ol%C3%A1!%20Quero%20apoiar%20a%20Sede%20Operacional%20da%20CRRM%20(LIR%2FMMA)." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.84 9.84 0 0 0 12.04 2zm5.8 14.13c-.25.7-1.44 1.33-1.99 1.41-.53.08-1.18.11-1.9-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5-4.35-5.16-4.56-.15-.2-1.24-1.64-1.24-3.13s.78-2.22 1.06-2.53c.27-.3.6-.38.8-.38l.57.01c.18.01.43-.07.67.51.25.6.85 2.08.92 2.23.07.15.12.32.02.52-.1.2-.15.32-.3.49l-.45.52c-.15.15-.3.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.48.13.66-.08.18-.2.76-.89.96-1.19.2-.3.4-.25.67-.15.27.1 1.71.81 2 .96.3.15.5.22.57.34.07.13.07.73-.18 1.42z"/></svg>
+            Falar no WhatsApp
+          </a>
+          <a class="btn btn-dark" href="https://projeto-recicla-mais-lir.com/" target="_blank" rel="noopener">
+            Projeto principal
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+          <a class="btn btn-dark" href="https://parcerias.transferegov.sistema.gov.br/ep-atos-prep-web/atos-prep/proposta/edicao/83508" target="_blank" rel="noopener">
+            Proposta no Transferegov
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== EXECUTORES / PARCEIROS ============================== -->
+<section id="parceiros">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Quem faz acontecer</span>
+      <h2>Executores e parceiros</h2>
+    </div>
+    <div class="grid g4">
+      <article class="card">
+        <img class="card-logo" src="assets/wteec.png" alt="WTEEC Engenharia" style="height:30px">
+        <h3>WTEEC Engenharia</h3>
+        <p class="muted">Proponente e Coordenadora</p>
+        <p style="margin-top:8px">Coordenação técnica, financeira e prestação de contas.</p>
+        <a class="site-link" href="https://wteec.com" target="_blank" rel="noopener">Visitar website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </article>
+      <article class="card">
+        <img class="card-logo" src="assets/habisolute.png" alt="Habisolute Engenharia" style="height:28px">
+        <h3>Habisolute Engenharia</h3>
+        <p class="muted">Empreiteira · Execução</p>
+        <p style="margin-top:8px">Obras civis e responsabilidade técnica (ART).</p>
+        <a class="site-link" href="https://habisoluteengenharia.com.br" target="_blank" rel="noopener">Visitar website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </article>
+      <article class="card">
+        <img class="card-logo" src="assets/crrm.png" alt="CRRM — Cooperativa Recicla Ribeirão MRM" style="height:48px">
+        <h3>CRRM</h3>
+        <p class="muted">Cooperativa beneficiária</p>
+        <p style="margin-top:8px">Operação do galpão: coleta, triagem e comercialização.</p>
+      </article>
+      <article class="card">
+        <img class="card-logo" src="assets/reciclamais.png" alt="Instituto Recicla+ Ribeirão Preto" style="height:42px">
+        <h3>Instituto Recicla+</h3>
+        <p class="muted">Parceiro operacional</p>
+        <p style="margin-top:8px">Coleta seletiva, educação ambiental e incubação da cooperativa.</p>
+        <a class="site-link" href="https://institutoreciclamais.com.br" target="_blank" rel="noopener">Visitar website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== DADOS OFICIAIS ============================== -->
+<section id="dados">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Transparência</span>
+      <h2>Dados oficiais</h2>
+      <p class="lead">Identificação da proposta, das instituições e da sede beneficiária.</p>
+    </div>
+    <div class="seals">
+      <div class="cap">Programa oficial do Governo Federal</div>
+      <div class="seals-row">
+        <img src="assets/lir.png" class="lir-seal" alt="LIR — Lei de Incentivo à Reciclagem">
+        <img src="assets/mma.png" alt="Ministério do Meio Ambiente e Mudança do Clima — Governo Federal">
+      </div>
+    </div>
+    <div class="dados" style="margin-top:18px">
+      <div class="dado"><div class="k">Programa</div><div class="v">2025-00001 — Lei de Incentivo à Reciclagem (MMA) &nbsp;<a href="https://www.in.gov.br/en/web/dou/-/portaria-sqa/mma-n-5-de-23-de-outubro-de-2025-665828612" target="_blank" rel="noopener" style="font-weight:700;color:var(--verde-montanha);text-decoration:none">Ver Portaria oficial ↗</a></div></div>
+      <div class="dado"><div class="k">Concedente / Repassador</div><div class="v">1927 — MMA — Ministério do Meio Ambiente</div></div>
+      <div class="dado"><div class="k">Proponente</div><div class="v">37.683.697/0001-52 — WTEEC Engenharia Ltda</div></div>
+      <div class="dado"><div class="k">Empreiteira</div><div class="v">32.933.181/0001-03 — Habisolute Engenharia <span class="badge">CREA-SP 2277933</span></div></div>
+      <div class="dado"><div class="k">Beneficiária</div><div class="v">63.109.264/0001-06 — CRRM — Cooperativa Recicla Ribeirão MRM <span class="badge">Ativa desde 08/10/2025</span></div></div>
+      <div class="dado"><div class="k">Sede da CRRM</div><div class="v">Rua Abraão Issa Halac, 1.551 — Ribeirânia — Ribeirão Preto/SP</div></div>
+      <div class="dado"><div class="k">Acompanhamento</div><div class="v">Proposta no Transferegov &nbsp;<a href="https://parcerias.transferegov.sistema.gov.br/ep-atos-prep-web/atos-prep/proposta/edicao/83508" target="_blank" rel="noopener" style="font-weight:700;color:var(--verde-montanha);text-decoration:none">Abrir no Transferegov ↗</a></div></div>
+    </div>
+
+    <!-- BLOCO BANCÁRIO / CAPTAÇÃO -->
+    <div class="bank">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6M4 10v9h16v-9M9 19v-5h6v5"/></svg></div>
+      <div>
+        <h4>Dados bancários para captação</h4>
+        <p style="font-size:15px">Cada proposta possui conta de captação própria, vinculada e auditável pelo MMA. Os dados bancários desta proposta de obras serão divulgados após confirmação.</p>
+        <span class="ph">[conta específica desta proposta — a confirmar]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CTA FINAL ============================== -->
+<section id="contato" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="cta-final">
+      <span class="eyebrow" style="color:var(--sol-300);justify-content:center;display:flex">Vamos construir juntos</span>
+      <h2>Sua dedução fiscal vira sede de cooperativa</h2>
+      <p>Fale com a coordenação para destinar parte do seu Imposto de Renda a esta obra de inclusão produtiva e economia circular em Ribeirão Preto.</p>
+      <div class="actions">
+        <a class="btn btn-wa" href="https://wa.me/5516992884284?text=Ol%C3%A1!%20Quero%20apoiar%20a%20Sede%20Operacional%20da%20CRRM%20(LIR%2FMMA)." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.84 9.84 0 0 0 12.04 2zm5.8 14.13c-.25.7-1.44 1.33-1.99 1.41-.53.08-1.18.11-1.9-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5-4.35-5.16-4.56-.15-.2-1.24-1.64-1.24-3.13s.78-2.22 1.06-2.53c.27-.3.6-.38.8-.38l.57.01c.18.01.43-.07.67.51.25.6.85 2.08.92 2.23.07.15.12.32.02.52-.1.2-.15.32-.3.49l-.45.52c-.15.15-.3.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.48.13.66-.08.18-.2.76-.89.96-1.19.2-.3.4-.25.67-.15.27.1 1.71.81 2 .96.3.15.5.22.57.34.07.13.07.73-.18 1.42z"/></svg>
+          Apoiar via WhatsApp
+        </a>
+        <a class="btn btn-sol" href="mailto:contato@institutoreciclamais.com.br?subject=Apoio%20LIR%20-%20Sede%20Operacional%20CRRM">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 6l8 6 8-6"/></svg>
+          Falar com a coordenação
+        </a>
+        <button class="btn btn-ghost" type="button" id="btnShare">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+          Compartilhar
+        </button>
+        <button class="btn btn-ghost" type="button" id="btnPrint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+          Salvar como PDF
+        </button>
+      </div>
+      <p style="margin-top:18px;font-size:13.5px;color:#bfe3d4">
+        <a href="https://projeto-recicla-mais-lir.com/" target="_blank" rel="noopener" style="color:var(--sol-300);font-weight:700;text-decoration:none">Projeto principal ↗</a>
+        &nbsp;·&nbsp;
+        <a href="https://parcerias.transferegov.sistema.gov.br/ep-atos-prep-web/atos-prep/proposta/edicao/83508" target="_blank" rel="noopener" style="color:var(--sol-300);font-weight:700;text-decoration:none">Transferegov ↗</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.in.gov.br/en/web/dou/-/portaria-sqa/mma-n-5-de-23-de-outubro-de-2025-665828612" target="_blank" rel="noopener" style="color:var(--sol-300);font-weight:700;text-decoration:none">Portaria oficial ↗</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#top" style="text-decoration:none">
+        <img src="assets/reciclamais_branco.png" alt="Instituto Recicla+ Ribeirão Preto" style="height:54px;width:auto;display:block">
+      </a>
+      <div class="cols">
+        <div class="col">
+          <h5>Proposta</h5>
+          <p>Sede Operacional da CRRM — Obras Civis</p>
+          <p>LIR/MMA · Programa 2025-00001</p>
+          <p>Portaria GM/MMA nº 1.250/2024</p>
+        </div>
+        <div class="col">
+          <h5>Instituições</h5>
+          <p>WTEEC Engenharia — coordenação</p>
+          <p>Habisolute Engenharia — execução</p>
+          <p>CRRM — cooperativa beneficiária</p>
+          <p>Instituto Recicla+ — parceiro</p>
+        </div>
+        <div class="col">
+          <h5>Contato</h5>
+          <a href="https://wa.me/5516992884284?text=Ol%C3%A1!%20Quero%20apoiar%20a%20Sede%20Operacional%20da%20CRRM%20(LIR%2FMMA)." target="_blank" rel="noopener">WhatsApp (16) 99288-4284</a>
+          <a href="mailto:contato@institutoreciclamais.com.br">contato@institutoreciclamais.com.br</a>
+          <p>Ribeirão Preto / SP</p>
+          <a href="https://projeto-recicla-mais-lir.com/" target="_blank" rel="noopener">projeto-recicla-mais-lir.com</a>
+          <a href="https://parcerias.transferegov.sistema.gov.br/ep-atos-prep-web/atos-prep/proposta/edicao/83508" target="_blank" rel="noopener">Proposta no Transferegov ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Instituto Recicla+ Ribeirão Preto · Cooperativa Recicla Ribeirão MRM (CRRM)</span>
+      <span>Coordenação: WTEEC Engenharia Ltda · Execução: Habisolute Engenharia</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================== WHATSAPP FLUTUANTE ============================== -->
+<a class="wa-float" href="https://wa.me/5516992884284?text=Ol%C3%A1!%20Quero%20apoiar%20a%20Sede%20Operacional%20da%20CRRM%20(LIR%2FMMA)." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.84 9.84 0 0 0 12.04 2zm5.8 14.13c-.25.7-1.44 1.33-1.99 1.41-.53.08-1.18.11-1.9-.12-.44-.14-1-.33-1.72-.64-3.03-1.31-5-4.35-5.16-4.56-.15-.2-1.24-1.64-1.24-3.13s.78-2.22 1.06-2.53c.27-.3.6-.38.8-.38l.57.01c.18.01.43-.07.67.51.25.6.85 2.08.92 2.23.07.15.12.32.02.52-.1.2-.15.32-.3.49l-.45.52c-.15.15-.3.31-.13.61.18.3.78 1.29 1.68 2.09 1.16 1.03 2.13 1.35 2.43 1.5.3.15.48.13.66-.08.18-.2.76-.89.96-1.19.2-.3.4-.25.67-.15.27.1 1.71.81 2 .96.3.15.5.22.57.34.07.13.07.73-.18 1.42z"/></svg>
+  <span class="lbl">Fale conosco</span>
+</a>
+
+<!-- ============================== LIGHTBOX ============================== -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Visualização ampliada">
+  <button class="lb-close" id="lbClose" aria-label="Fechar">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Anterior">&#8249;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Próxima">&#8250;</button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- LIGHTBOX da galeria ---------- */
+  var shots = Array.prototype.slice.call(document.querySelectorAll('#gallery .shot'));
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCap = document.getElementById('lbCap');
+  var idx = 0;
+
+  function show(i){
+    if(!shots.length) return;
+    idx = (i + shots.length) % shots.length;
+    var fig = shots[idx];
+    lbImg.src = fig.getAttribute('data-full');
+    lbImg.alt = fig.getAttribute('data-cap') || '';
+    lbCap.textContent = fig.getAttribute('data-cap') || '';
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden','false');
+  }
+  function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
+
+  shots.forEach(function(fig,i){ fig.addEventListener('click', function(){ show(i); }); });
+  var c=document.getElementById('lbClose'); if(c) c.addEventListener('click', close);
+  var p=document.getElementById('lbPrev'); if(p) p.addEventListener('click', function(e){ e.stopPropagation(); show(idx-1); });
+  var n=document.getElementById('lbNext'); if(n) n.addEventListener('click', function(e){ e.stopPropagation(); show(idx+1); });
+  lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') close();
+    else if(e.key === 'ArrowRight') show(idx+1);
+    else if(e.key === 'ArrowLeft') show(idx-1);
+  });
+
+  /* ---------- COMPARTILHAR (Web Share API + fallback copiar) ---------- */
+  var btnShare = document.getElementById('btnShare');
+  if(btnShare){
+    btnShare.addEventListener('click', function(){
+      var data = {
+        title: 'Sede Operacional da CRRM — Obras Civis (LIR/MMA)',
+        text: 'Apoie a sede da cooperativa de catadores de Ribeirão Preto com dedução no IR.',
+        url: window.location.href
+      };
+      if(navigator.share){
+        navigator.share(data).catch(function(){});
+      } else if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(window.location.href).then(function(){
+          alert('Link copiado para a área de transferência!');
+        }).catch(function(){ prompt('Copie o link:', window.location.href); });
+      } else {
+        prompt('Copie o link:', window.location.href);
+      }
+    });
+  }
+
+  /* ---------- SALVAR COMO PDF (impressão) ---------- */
+  var btnPrint = document.getElementById('btnPrint');
+  if(btnPrint){ btnPrint.addEventListener('click', function(){ window.print(); }); }
+})();
+</script>
+
+</body>
+</html>
