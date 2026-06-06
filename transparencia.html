@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#004C3C">
+<title>Plataforma de Transparência & Acompanhamento — Sede Operacional da CRRM (LIR/MMA)</title>
+<meta name="description" content="Acompanhe a obra da Sede Operacional da Cooperativa Recicla Ribeirão MRM: pacotes apadrináveis, transparência financeira, notas fiscais auditáveis, evidências e trilha de auditoria. Lei de Incentivo à Reciclagem (LIR/MMA).">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Transparência & Acompanhamento — Sede Operacional da CRRM (LIR/MMA)">
+<meta property="og:description" content="Pacotes apadrináveis, financeiro auditável, NFs e evidências da obra da cooperativa de catadores de Ribeirão Preto.">
+<meta property="og:type" content="website">
+
+<!-- Fontes oficiais Recicla+: Dosis (display) + Archivo (corpo) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ====================================================================
+   RECICLA+ — Identidade Visual Oficial (INVIOLÁVEL)
+   Paleta: Verde Oceano (cor-mãe) + Amarelo Sol (acento) + neutros Prata/Cinza
+   Tipografia: Dosis (display) / Archivo (corpo)
+   Harmonizada com o site das Obras (index.html) deste mesmo repositório.
+   ==================================================================== */
+:root{
+  /* Verde Oceano */
+  --oc-900:#004C3C; --oc-800:#014435; --oc-700:#013B2D; --oc-600:#023326;
+  /* Amarelo Sol */
+  --sol-500:#F9B114; --sol-400:#FABA2C; --sol-300:#FAC444; --sol-200:#FBCD5C;
+  /* Apoio */
+  --verde-montanha:#149E5A; --turquesa:#12B0A3; --indigo:#5671C4;
+  --berinjela:#6E4C75; --abobora:#FA6E37; --mogno:#C53A33;
+  /* Neutros — Prata Metálico (claros) */
+  --prata-100:#F4F4F4; --prata-200:#EDEDED; --prata-300:#E8E8E8; --prata-400:#E3E3E3;
+  /* Neutros — Cinza Composto (escuros) */
+  --cinza-900:#1C1F26; --cinza-800:#20232B; --cinza-700:#242730; --cinza-600:#282C36;
+
+  /* Semânticos (espelham o site de Obras) */
+  --bg:#F7FAF8;
+  --tinta:#1C2B24;
+  --texto:#384842;
+  --suave:#6B7C74;
+  --muted:#6B7C74;
+  --card:#FFFFFF;
+  --paper:#F1F8F4;
+  --linha:#E4EFE9;
+  --border:#E4EFE9;
+  --linha-forte:#D4E5DC;
+  --verde-claro:#EAF4EF;
+  --verde-claro-2:#F1F8F4;
+  /* aliases usados pelo JS preservado */
+  --green:var(--oc-900);
+  --green-mid:var(--verde-montanha);
+  --gold:var(--sol-500);
+  --orange:var(--abobora);
+  --success:var(--verde-montanha);
+  --danger:var(--mogno);
+  --font-head:'Dosis','Archivo',system-ui,sans-serif;
+  --font-body:'Archivo',system-ui,sans-serif;
+
+  --sombra-sm:0 2px 8px rgba(1,59,45,.06);
+  --sombra:0 10px 30px -8px rgba(1,59,45,.16);
+  --sombra-lg:0 24px 60px -18px rgba(1,59,45,.30);
+  --radius:18px;
+  --radius-lg:26px;
+  --grad-marca:linear-gradient(135deg,var(--oc-900) 0%,var(--oc-700) 55%,#0a6b50 100%);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  color:var(--texto);background:var(--bg);line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  font-size:16px;
+}
+h1,h2,h3,h4,.display{font-family:var(--font-head);color:var(--oc-900);letter-spacing:-.01em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+a{color:var(--oc-800)}
+img,svg{max-width:100%}
+::selection{background:var(--sol-300);color:var(--oc-900)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+:focus-visible{outline:3px solid var(--sol-400);outline-offset:2px;border-radius:4px}
+
+.small{font-size:12.5px;color:var(--suave);line-height:1.55}
+.accent{color:var(--sol-500)}
+
+/* ====================================================================
+   BANNER DEMONSTRAÇÃO (best practice — fixo no topo do documento)
+   ==================================================================== */
+.demo-banner{
+  background:repeating-linear-gradient(135deg,#7a5b13 0 18px,#8a6815 18px 36px);
+  color:#fff;font-family:var(--font-body);font-weight:700;font-size:13px;
+  text-align:center;padding:9px 16px;letter-spacing:.02em;position:relative;z-index:60;
+}
+.demo-banner b{color:var(--sol-300)}
+.demo-banner span{font-weight:500;opacity:.92}
+
+/* ====================================================================
+   TOPBAR (idêntica em estilo ao site de Obras)
+   ==================================================================== */
+.topbar{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.90);
+  backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid var(--linha);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.brand .logo-img{height:42px;width:auto;display:block}
+nav.main-nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+nav.main-nav a{font-weight:600;font-size:14px;color:var(--oc-800);text-decoration:none;padding:8px 11px;border-radius:10px;transition:.18s;cursor:pointer}
+nav.main-nav a:hover{background:var(--verde-claro);color:var(--oc-900)}
+nav.main-nav a.active{background:var(--oc-900);color:#fff}
+.btn-doador{
+  background:var(--sol-500);color:var(--oc-900);border:0;cursor:pointer;
+  font-family:var(--font-body);font-weight:700;font-size:14px;padding:10px 16px;border-radius:11px;
+  box-shadow:0 8px 20px -8px rgba(249,177,20,.6);transition:.2s;
+}
+.btn-doador:hover{background:var(--sol-400);transform:translateY(-1px)}
+@media(max-width:1040px){nav.main-nav a:not(.cross){display:none}}
+
+/* topbar cross-links (sempre visíveis, abrem em nova aba) */
+.cross{display:inline-flex;align-items:center;gap:5px;font-size:13px!important}
+.cross svg{width:13px;height:13px}
+
+/* ====================================================================
+   BOTÕES / PILLS
+   ==================================================================== */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;cursor:pointer;
+  font-family:var(--font-body);font-weight:700;font-size:15px;
+  padding:13px 24px;border-radius:13px;text-decoration:none;border:0;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.btn svg{width:17px;height:17px}
+.btn-sol{background:var(--sol-500);color:var(--oc-900);box-shadow:0 10px 26px -8px rgba(249,177,20,.6)}
+.btn-sol:hover{transform:translateY(-2px);background:var(--sol-400)}
+.btn-ghost{background:rgba(255,255,255,.10);color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+.btn-ghost:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
+.btn-dark{background:var(--oc-900);color:#fff;box-shadow:var(--sombra)}
+.btn-dark:hover{background:var(--oc-800);transform:translateY(-2px)}
+
+.pill{display:inline-block;font-weight:700;font-size:11px;letter-spacing:.04em;padding:3px 10px;border-radius:999px;text-transform:uppercase}
+.pill-success{background:#DCF3E6;color:#0c7a45}
+.pill-info{background:#DBF6F3;color:#0c7d73}
+.pill-warn{background:#FFF1CC;color:#9a6b00}
+.pill-muted{background:var(--prata-200);color:#5a6b63}
+.perfil{display:inline-block;font-weight:700;font-size:10px;padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.perfil-PJ{background:#E4E9F8;color:#3a4f9e}
+.perfil-PF{background:#DCF3E6;color:#0c7a45}
+.perfil-VAK{background:#FFE6D9;color:#c1481f}
+.verified-badge{display:inline-block;background:#DCF3E6;color:#0c7a45;font-weight:700;font-size:11px;padding:2px 9px;border-radius:999px;margin-right:4px}
+
+/* ====================================================================
+   PÁGINAS (router)
+   ==================================================================== */
+.page{display:none;animation:fade .35s ease}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+section{padding:64px 0}
+.sec-head{text-align:center;max-width:780px;margin:0 auto 40px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-montanha);margin-bottom:12px}
+.eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:var(--sol-500)}
+.sec-head h2{font-size:clamp(26px,3.6vw,38px);font-weight:800;line-height:1.14}
+.sec-head .lead{color:var(--suave);margin-top:14px;font-size:16.5px}
+.panel{background:linear-gradient(180deg,var(--verde-claro-2),var(--verde-claro));border:1px solid var(--linha);border-radius:var(--radius-lg);padding:48px 0}
+.panel-dark{background:var(--grad-marca);color:#fff;border-radius:var(--radius-lg);padding:48px 0;position:relative;overflow:hidden}
+.panel-dark h2,.panel-dark h3{color:#fff}
+
+/* ====================================================================
+   HERO
+   ==================================================================== */
+.hero{position:relative;overflow:hidden;background:var(--grad-marca);color:#fff;padding:72px 0 84px}
+.hero::before{content:"";position:absolute;inset:0;opacity:.5;background:
+  radial-gradient(900px 500px at 82% 8%,rgba(20,158,90,.45),transparent 60%),
+  radial-gradient(700px 600px at 12% 100%,rgba(18,176,163,.30),transparent 60%);}
+.hero .wrap{position:relative;z-index:2;max-width:960px;text-align:center}
+.hero .pill-top{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 16px;font-weight:600;font-size:12.5px;letter-spacing:.04em;color:#eafaf2;margin-bottom:22px}
+.hero .pill-top .dot{width:8px;height:8px;border-radius:50%;background:var(--sol-400);box-shadow:0 0 0 4px rgba(250,186,44,.25)}
+.hero h1{font-size:clamp(30px,5vw,52px);font-weight:800;color:#fff;line-height:1.07;letter-spacing:-.02em}
+.hero h1 .accent{color:var(--sol-400)}
+.hero .tag{font-size:clamp(16px,2.1vw,20px);font-weight:500;color:#dff3ea;margin:18px auto 6px;max-width:720px;line-height:1.5}
+.hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.hero .cadence{margin-top:22px;font-size:13px;color:#bfe3d4}
+
+/* faixa total (KPIs) sob o hero */
+.total-bar{position:relative;z-index:3;max-width:1040px;margin:-48px auto 0;padding:0 24px}
+.total-bar .inner{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--sombra-lg);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
+.total-stat{padding:24px 20px;text-align:center;border-right:1px solid var(--linha)}
+.total-stat:last-child{border-right:0}
+.total-stat .label{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--suave);text-transform:uppercase}
+.total-stat .value{font-family:var(--font-head);font-weight:800;font-size:clamp(22px,2.8vw,32px);color:var(--oc-900);line-height:1;margin-top:8px}
+.total-stat .sublabel{font-size:11.5px;color:var(--suave);margin-top:7px;line-height:1.35}
+@media(max-width:780px){.total-bar .inner{grid-template-columns:1fr 1fr}.total-stat:nth-child(2){border-right:0}.total-stat:nth-child(1),.total-stat:nth-child(2){border-bottom:1px solid var(--linha)}}
+
+/* ====================================================================
+   GRID DE PACOTES (cards)
+   ==================================================================== */
+.blocos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:980px){.blocos-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.blocos-grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--linha);border-radius:var(--radius);box-shadow:var(--sombra-sm);transition:transform .22s,box-shadow .22s,border-color .22s;overflow:hidden;cursor:pointer;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sombra);border-color:var(--linha-forte)}
+.card-photo{position:relative;height:150px;background:var(--grad-marca);display:flex;align-items:center;justify-content:center}
+.card-photo .icon-bg{font-size:58px;opacity:.95}
+.card-photo-overlay{position:absolute;left:0;right:0;bottom:0;padding:18px 18px 12px;background:linear-gradient(0deg,rgba(1,59,45,.92),transparent)}
+.block-tag{font-family:var(--font-body);font-weight:700;font-size:11px;letter-spacing:.12em;color:var(--sol-300);text-transform:uppercase}
+.block-name{font-family:var(--font-head);font-weight:800;font-size:21px;color:#fff;line-height:1.12;margin-top:2px}
+.card-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.meta-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.meta-pill{background:var(--verde-claro);color:var(--oc-900);font-weight:700;font-size:11px;padding:4px 10px;border-radius:999px;border:1px solid var(--linha-forte)}
+.tagline{font-size:14px;color:var(--texto);margin-bottom:14px;min-height:42px}
+.thermometer-bar{height:9px;border-radius:6px;background:var(--prata-200);overflow:hidden}
+.thermometer-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--sol-500),var(--sol-300))}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}
+.stat{background:var(--paper);border-radius:10px;padding:10px 6px;text-align:center}
+.stat-label{font-size:9.5px;letter-spacing:.08em;color:var(--suave);font-weight:700;text-transform:uppercase}
+.stat-value{font-family:var(--font-head);font-weight:800;font-size:19px;color:var(--oc-900);margin-top:3px}
+.parceria{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.parceria-label{font-size:9.5px;letter-spacing:.08em;color:var(--suave);font-weight:700;text-transform:uppercase}
+.parceria-name{font-size:13px;font-weight:600;color:var(--oc-800)}
+.card .cta{margin-top:auto;display:inline-block;background:var(--oc-900);color:#fff;text-align:center;padding:11px 16px;border-radius:11px;text-decoration:none;font-weight:700;font-size:14px;transition:.2s}
+.card .cta:hover{background:var(--oc-800)}
+
+/* ====================================================================
+   TABELAS
+   ==================================================================== */
+.table-wrap{background:#fff;border:1px solid var(--linha);border-radius:var(--radius);overflow:hidden;box-shadow:var(--sombra-sm);overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead th{background:var(--oc-900);color:#fff;font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:13px 14px;text-align:left;white-space:nowrap}
+tbody td{padding:11px 14px;border-bottom:1px solid var(--linha);vertical-align:top}
+tbody tr:nth-child(even){background:var(--verde-claro-2)}
+tbody tr:hover{background:#FFF8E6}
+td.num,th.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+table a{color:var(--oc-800);font-weight:600;text-decoration:none}
+table a:hover{color:var(--verde-montanha);text-decoration:underline}
+
+/* ====================================================================
+   KPI CARDS
+   ==================================================================== */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:880px){.kpi-grid{grid-template-columns:1fr 1fr}}
+.kpi-card{background:#fff;border:1px solid var(--linha);border-top:4px solid var(--sol-500);border-radius:14px;padding:20px;box-shadow:var(--sombra-sm)}
+.kpi-card.green{border-top-color:var(--verde-montanha)}
+.kpi-card.orange{border-top-color:var(--abobora)}
+.kpi-card .label{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--suave);text-transform:uppercase}
+.kpi-card .value{font-family:var(--font-head);font-weight:800;font-size:clamp(22px,3vw,30px);color:var(--oc-900);line-height:1.05;margin-top:8px}
+.kpi-card .sub{font-size:12px;color:var(--suave);margin-top:6px}
+
+/* blocos de conteúdo */
+.content-card{background:#fff;border:1px solid var(--linha);border-radius:var(--radius);padding:24px;box-shadow:var(--sombra-sm);margin-top:22px}
+.content-card h3{font-size:19px;font-weight:700;margin-bottom:14px}
+.two-col{display:grid;grid-template-columns:2fr 1fr;gap:22px;align-items:start}
+@media(max-width:860px){.two-col{grid-template-columns:1fr}}
+
+/* doadores rows */
+.donor-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--linha)}
+.donor-row:last-child{border-bottom:0}
+.donor-name{font-weight:600;color:var(--tinta)}
+.donor-vals{text-align:right}
+.donor-val{font-family:var(--font-head);font-weight:800;color:var(--oc-900);font-size:16px}
+.donor-pct{font-size:11.5px;color:var(--suave)}
+
+/* timeline */
+.timeline-item{position:relative;padding:0 0 18px 26px;border-left:2px solid var(--linha-forte)}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{content:"";position:absolute;left:-7px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--prata-300);border:2px solid #fff}
+.timeline-item.done::before{background:var(--verde-montanha)}
+.timeline-item:not(.done):not(.future)::before{background:var(--sol-500)}
+.timeline-item .date{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--verde-montanha);text-transform:uppercase}
+.timeline-item.future .date{color:var(--suave)}
+.timeline-item .event{font-size:14px;color:var(--texto);margin-top:2px}
+
+/* big thermometer (bloco) */
+.big-thermo{margin-bottom:18px}
+.big-thermo-bar{height:16px;border-radius:10px;background:var(--prata-200);overflow:hidden}
+.big-thermo-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--sol-500),var(--sol-300))}
+.big-thermo-info{display:flex;justify-content:space-between;font-size:13px;margin-top:7px;color:var(--texto)}
+
+/* galeria */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:880px){.gallery-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.gallery-grid{grid-template-columns:1fr}}
+.gallery-item{position:relative;aspect-ratio:1.4/1;border-radius:14px;overflow:hidden;cursor:pointer;background:var(--grad-marca);box-shadow:var(--sombra-sm);transition:transform .2s}
+.gallery-item:hover{transform:translateY(-3px);box-shadow:var(--sombra)}
+.gallery-icon{position:absolute;top:10px;left:10px;background:rgba(1,59,45,.78);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.06em;padding:4px 9px;border-radius:999px}
+.gallery-cap{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 12px;background:linear-gradient(0deg,rgba(1,59,45,.92),transparent);color:#fff;font-size:12.5px;font-weight:600;line-height:1.3}
+
+/* filtros */
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px}
+.filters select,.filters input{font-family:var(--font-body);font-size:14px;padding:9px 12px;border:1px solid var(--linha-forte);border-radius:10px;background:#fff;color:var(--texto)}
+.filters input{min-width:220px;flex:1}
+.btn-csv{background:var(--sol-500);color:var(--oc-900);border:0;cursor:pointer;font-family:var(--font-body);font-weight:700;font-size:13px;padding:9px 14px;border-radius:10px}
+.btn-csv:hover{background:var(--sol-400)}
+
+/* 8 estados (fluxo NF) */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
+@media(max-width:780px){.flow{grid-template-columns:1fr 1fr}}
+.flow-step{background:#fff;border:1px solid var(--linha);border-left:4px solid var(--sol-500);border-radius:12px;padding:14px 16px}
+.flow-step .n{font-family:var(--font-head);font-weight:800;font-size:13px;color:var(--verde-montanha)}
+.flow-step b{display:block;font-size:14px;color:var(--oc-900);margin:2px 0 4px}
+.flow-step p{font-size:12px;color:var(--suave)}
+
+/* hash */
+.hash-block{background:var(--cinza-900);border-radius:12px;padding:16px 18px;margin-top:14px;overflow:auto}
+.hash-block .label{color:var(--sol-300);font-family:var(--font-body);font-size:10px;letter-spacing:.12em;display:block;margin-bottom:6px;text-transform:uppercase;font-weight:700}
+.hash-block code{color:#cfe9de;font-size:12px;word-break:break-all}
+
+/* auditoria */
+.audit-row{display:grid;grid-template-columns:150px 88px 1fr 180px;gap:12px;padding:12px 0;border-bottom:1px solid var(--linha);font-size:13px;align-items:start}
+@media(max-width:780px){.audit-row{grid-template-columns:1fr}}
+.audit-row .ts{font-variant-numeric:tabular-nums;color:var(--suave);font-size:12px}
+.audit-row .action{display:inline-block;background:var(--verde-claro);color:var(--oc-900);font-weight:700;font-size:11px;padding:2px 9px;border-radius:999px}
+.audit-row .desc{color:var(--texto)}
+.audit-row .user{color:var(--suave);font-size:12px}
+
+/* login doador */
+.login-box{max-width:440px;margin:0 auto;background:#fff;border:1px solid var(--linha);border-radius:var(--radius);padding:30px;box-shadow:var(--sombra);text-align:center}
+.login-box input{width:100%;padding:12px 14px;border:1px solid var(--linha-forte);border-radius:11px;font-family:var(--font-body);font-size:15px;margin:10px 0}
+.login-box button{width:100%;padding:13px;background:var(--oc-900);color:#fff;border:0;border-radius:11px;font-family:var(--font-body);font-weight:700;font-size:15px;cursor:pointer}
+.login-box button:hover{background:var(--oc-800)}
+.demo-hint{margin-top:14px;font-size:12px;color:var(--suave);background:var(--paper);border-radius:10px;padding:10px}
+.lgpd-toggle{display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--linha);border-radius:12px;padding:14px 16px;margin-top:16px}
+.lgpd-toggle input{width:20px;height:20px;accent-color:var(--verde-montanha)}
+.lgpd-toggle label{font-size:13px;color:var(--texto)}
+
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--oc-800);text-decoration:none;font-weight:600;font-size:14px;margin-bottom:20px}
+.back-link:hover{color:var(--verde-montanha)}
+
+/* ====================================================================
+   MODAL
+   ==================================================================== */
+.modal-bg{position:fixed;inset:0;z-index:200;display:none;background:rgba(2,30,22,.86);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:24px}
+.modal-bg.active{display:flex}
+.modal{background:#fff;border-radius:var(--radius);padding:30px;max-width:560px;width:100%;max-height:88vh;overflow:auto;position:relative;box-shadow:var(--sombra-lg)}
+.modal h3{font-size:24px;margin-bottom:4px}
+.modal table{font-size:14px}
+.modal table td{padding:7px 4px;border-bottom:1px solid var(--linha)}
+.close-x{position:absolute;top:16px;right:18px;width:38px;height:38px;border-radius:50%;background:var(--paper);border:0;font-size:24px;cursor:pointer;color:var(--oc-900);line-height:1}
+.close-x:hover{background:var(--verde-claro)}
+
+/* ====================================================================
+   SEALS + FOOTER (idêntico ao site de Obras)
+   ==================================================================== */
+.seals{margin-top:8px}
+.seals .cap{text-align:center;color:var(--suave);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-bottom:14px}
+.seals-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:26px 42px;background:#fff;border:1px solid var(--linha);border-radius:var(--radius);padding:24px 26px;box-shadow:var(--sombra-sm)}
+.seals-row img{height:44px;width:auto;object-fit:contain}
+.seals-row .lir-seal{height:60px}
+
+footer.site{background:var(--cinza-900);color:#aeb9c2;padding:50px 0 36px;font-size:14px;margin-top:64px}
+footer.site .top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08)}
+footer.site .cols{display:flex;gap:44px;flex-wrap:wrap}
+footer.site .col h5{font-family:var(--font-head);font-weight:700;color:#fff;font-size:15px;margin-bottom:10px;letter-spacing:.04em}
+footer.site .col p,footer.site .col a{color:#aeb9c2;text-decoration:none;font-size:13px;display:block;margin-bottom:5px}
+footer.site .col a:hover{color:var(--sol-300)}
+footer.site .bottom{padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#7f8a93}
+
+@media(max-width:760px){
+  section{padding:48px 0}
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  footer.site .top{flex-direction:column}
+  .filters input{min-width:0;width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== BANNER DEMONSTRAÇÃO (best practice — sempre visível) ===== -->
+<div class="demo-banner" role="status">
+  <b>DEMONSTRAÇÃO</b> — dados ilustrativos (doadores, doações e NFs são fictícios). <span>Substituídos por dados reais à medida que a captação e a obra avançam.</span>
+</div>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#home" onclick="navigate('home');return false;" aria-label="Início — Recicla+ / CRRM">
+      <img class="logo-img" src="assets/reciclamais.png" alt="Instituto Recicla+ Ribeirão Preto">
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a data-page="home" onclick="navigate('home');return false;">Pacotes</a>
+      <a data-page="financeiro" onclick="navigate('financeiro');return false;">Financeiro</a>
+      <a data-page="nfs" onclick="navigate('nfs');return false;">Notas Fiscais</a>
+      <a data-page="evidencias" onclick="navigate('evidencias');return false;">Evidências</a>
+      <a data-page="auditoria" onclick="navigate('auditoria');return false;">Auditoria</a>
+      <a class="cross" href="https://flamatos.github.io/sede-crrm-obras/" target="_blank" rel="noopener">Obras<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <button class="btn-doador" onclick="navigate('doador')">Área do Doador</button>
+    </nav>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE · HOME (Pacotes apadrináveis + acompanhamento)         -->
+<!-- ============================================================ -->
+<div class="page active" id="page-home">
+  <header class="hero">
+    <div class="wrap">
+      <span class="pill-top"><span class="dot"></span> Lei de Incentivo à Reciclagem · MMA · Programa 2025-00001</span>
+      <h1>Transparência &amp; <span class="accent">Acompanhamento</span><br>da Sede Operacional da CRRM</h1>
+      <p class="tag">Apadrinhe um <b>pacote da obra</b> e acompanhe a aplicação de cada real — financeiro auditável, notas fiscais, evidências e trilha de auditoria da construção da sede da cooperativa de catadores de Ribeirão Preto.</p>
+      <div class="actions">
+        <a class="btn btn-sol" href="#financeiro" onclick="navigate('financeiro');return false;">Ver transparência financeira</a>
+        <a class="btn btn-ghost" href="#auditoria" onclick="navigate('auditoria');return false;">Modo auditor</a>
+      </div>
+      <p class="cadence">Fonte da verdade: planilha-mestra no Drive do Instituto · <b>atualizado a cada etapa</b> da obra e da prestação de contas (não é “tempo real”).</p>
+    </div>
+  </header>
+
+  <div class="total-bar">
+    <div class="inner" id="homeTotalBar"><!-- KPIs injetados via JS --></div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Apadrinhe &amp; acompanhe</span>
+        <h2>5 pacotes apadrináveis da obra</h2>
+        <p class="lead">A Meta IV (infraestrutura física · R$ 1.690.000, base SINAPI) foi agrupada em 5 pacotes coerentes. Apoie um pacote e acompanhe sua execução físico-financeira etapa a etapa.</p>
+      </div>
+      <div class="blocos-grid" id="homeBlocosGrid"><!-- cards injetados via JS --></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="panel-dark">
+        <div class="wrap" style="padding:0 36px">
+          <div class="sec-head" style="margin-bottom:24px">
+            <span class="eyebrow" style="color:var(--sol-300)">Como funciona o incentivo</span>
+            <h2>Sua dedução no IR vira sede de cooperativa</h2>
+            <p class="lead" style="color:#cfe9de">Para propostas com obras civis, a captação mínima é de 50% (Art. 24, II da Portaria GM/MMA nº 1.250/2024). Você redireciona parte do imposto que já pagaria — sem custo extra.</p>
+          </div>
+          <div class="actions" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <a class="btn btn-sol" href="https://projeto-recicla-mais-lir.com/" target="_blank" rel="noopener">Projeto principal ↗</a>
+            <a class="btn btn-ghost" href="https://parcerias.transferegov.sistema.gov.br/ep-atos-prep-web/atos-prep/proposta/edicao/83508" target="_blank" rel="noopener">Proposta no Transferegov ↗</a>
+            <a class="btn btn-ghost" href="https://www.in.gov.br/en/web/dou/-/portaria-sqa/mma-n-5-de-23-de-outubro-de-2025-665828612" target="_blank" rel="noopener">Portaria oficial ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE · BLOCO (detalhe do pacote)                            -->
+<!-- ============================================================ -->
+<div class="page" id="page-bloco">
+  <section>
+    <div class="wrap">
+      <a href="#home" class="back-link" onclick="navigate('home');return false;">← Voltar para todos os pacotes</a>
+      <div class="sec-head" style="text-align:left;margin-left:0;max-width:none">
+        <span class="eyebrow" id="blocoTag">PACOTE</span>
+        <h2 id="blocoNome">—</h2>
+        <p class="lead" id="blocoMeta" style="margin-top:8px"></p>
+      </div>
+
+      <div id="blocoFinDetail" style="max-width:720px;margin-bottom:30px"></div>
+
+      <div class="two-col">
+        <div>
+          <div class="content-card" style="margin-top:0">
+            <h3>Doadores deste pacote (pró-rata)</h3>
+            <div id="blocoDonors"></div>
+            <a class="btn btn-sol" href="#doador" onclick="navigate('doador');return false;" style="margin-top:16px">Apadrinhar este pacote</a>
+          </div>
+          <div class="content-card">
+            <h3>Linha do tempo da execução</h3>
+            <div id="blocoTimeline"></div>
+          </div>
+          <div class="content-card">
+            <h3>Notas fiscais vinculadas</h3>
+            <div id="blocoNFs"></div>
+          </div>
+          <div class="content-card">
+            <h3>Evidências</h3>
+            <div class="gallery-grid" id="blocoEvidencias" style="margin-top:4px"></div>
+          </div>
+        </div>
+        <aside>
+          <div class="content-card" style="margin-top:0">
+            <h3>Resumo</h3>
+            <div id="blocoSummary"></div>
+          </div>
+          <div class="content-card">
+            <h3>Impacto socioambiental / ano</h3>
+            <div id="blocoImpacto"></div>
+          </div>
+          <div class="content-card">
+            <h3>Garantias de transparência</h3>
+            <ul id="blocoContras" style="list-style:none;font-size:13px;color:var(--texto)"></ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE · FINANCEIRO                                            -->
+<!-- ============================================================ -->
+<div class="page" id="page-financeiro">
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Transparência financeira</span>
+        <h2>Cada real, do aporte à nota fiscal</h2>
+        <p class="lead">Visão consolidada da obra: meta, arrecadado, executado (apenas NFs publicadas/conciliadas) e saldo — por pacote, por modalidade, por categoria e por mês.</p>
+      </div>
+
+      <div class="kpi-grid" id="finKPIs" style="margin-bottom:30px"></div>
+
+      <div class="table-wrap" style="margin-bottom:14px">
+        <table id="finBlocos">
+          <thead><tr><th>Pacote</th><th class="num">Meta</th><th class="num">Arrecadado</th><th class="num">Gasto (NFs)</th><th class="num">Saldo</th><th class="num">% Captado</th><th class="num">% Exec.</th><th>Status</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px">
+        <button class="btn-csv" onclick="downloadCSV('financeiro')">📥 CSV consolidado</button>
+        <button class="btn-csv" onclick="downloadCSV('nfs')">📥 NFs (CSV)</button>
+        <button class="btn-csv" onclick="downloadCSV('doadores')">📥 Doadores (anonimizados)</button>
+      </div>
+
+      <div class="two-col">
+        <div class="content-card" style="margin-top:0">
+          <h3>Por modalidade de aporte</h3>
+          <div id="finModalidade"></div>
+        </div>
+        <div class="content-card" style="margin-top:0">
+          <h3>Por categoria de gasto</h3>
+          <div id="finCategoria"></div>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Fluxo de caixa mensal</h3>
+        <div class="table-wrap" id="finFluxo" style="box-shadow:none;border:0"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE · NOTAS FISCAIS (8 estados)                            -->
+<!-- ============================================================ -->
+<div class="page" id="page-nfs">
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Notas fiscais auditáveis</span>
+        <h2>8 estados · toda NF passa por todos antes de virar pública</h2>
+        <p class="lead">Recebida → Vinculada → Em análise → Aprovada (4-eyes) → Conciliada com extrato → Publicada. Rejeitada e Pendente cobrem exceções. Só NFs <b>Publicadas/Conciliadas</b> entram no “executado”.</p>
+      </div>
+
+      <div class="flow" style="margin-bottom:34px">
+        <div class="flow-step"><div class="n">1</div><b>Recebida</b><p>Chega por e-mail (nf@) e entra no sistema.</p></div>
+        <div class="flow-step"><div class="n">2</div><b>Vinculada</b><p>Associada a um pacote e a uma etapa.</p></div>
+        <div class="flow-step"><div class="n">3</div><b>Em análise</b><p>Conferência fiscal e de escopo.</p></div>
+        <div class="flow-step"><div class="n">4</div><b>Aprovada</b><p>Dupla validação (4-eyes).</p></div>
+        <div class="flow-step"><div class="n">5</div><b>Conciliada</b><p>Cruzada com o extrato bancário.</p></div>
+        <div class="flow-step"><div class="n">6</div><b>Publicada</b><p>Visível e auditável publicamente.</p></div>
+        <div class="flow-step" style="border-left-color:var(--mogno)"><div class="n" style="color:var(--mogno)">×</div><b>Rejeitada</b><p>Fora de escopo / inconsistente.</p></div>
+        <div class="flow-step" style="border-left-color:var(--prata-400)"><div class="n" style="color:var(--suave)">…</div><b>Pendente</b><p>Aguardando documento ou conciliação.</p></div>
+      </div>
+
+      <div class="kpi-grid" id="nfsKPIs" style="margin-bottom:24px"></div>
+
+      <div class="filters">
+        <select id="nfFilterBloco" onchange="renderNFs()"><option value="">Todos os pacotes</option></select>
+        <select id="nfFilterCat" onchange="renderNFs()">
+          <option value="">Todas as categorias</option>
+          <option>Serviços preliminares</option><option>Terraplenagem</option><option>Fundação</option>
+          <option>Estrutura</option><option>Cobertura</option><option>Vedações</option><option>Acabamentos</option>
+          <option>Instalações</option><option>Incêndio</option><option>Esquadrias</option><option>Administração</option>
+        </select>
+        <select id="nfFilterStatus" onchange="renderNFs()">
+          <option value="">Todos os status</option>
+          <option>Publicada</option><option>Conciliada</option><option>Aprovada</option><option>Pendente</option>
+        </select>
+        <input id="nfFilterText" type="text" placeholder="Buscar por fornecedor, CNPJ, etapa, nº…" oninput="renderNFs()">
+        <button class="btn-csv" onclick="downloadCSV('nfs')">📥 CSV</button>
+      </div>
+
+      <div class="table-wrap">
+        <table id="nfTable">
+          <thead><tr><th>Nº</th><th>Data</th><th>Fornecedor</th><th class="num">Valor</th><th>Pacote</th><th>Categoria / etapa</th><th>Status</th><th>Doc.</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE · EVIDÊNCIAS                                            -->
+<!-- ============================================================ -->
+<div class="page" id="page-evidencias">
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Galeria de evidências</span>
+        <h2>Provas visuais da obra em campo</h2>
+        <p class="lead">Fotos, vídeos e documentos publicados após verificação, vinculados a cada pacote e etapa da prestação de contas oficial.</p>
+      </div>
+      <div class="filters">
+        <select id="evFilterBloco" onchange="renderEvidencias()"><option value="">Todos os pacotes</option></select>
+        <select id="evFilterTipo" onchange="renderEvidencias()">
+          <option value="">Todos os tipos</option>
+          <option>Foto</option><option>Vídeo</option><option>Documento</option>
+        </select>
+      </div>
+      <div class="gallery-grid" id="evGallery"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE · ÁREA DO DOADOR                                        -->
+<!-- ============================================================ -->
+<div class="page" id="page-doador">
+  <section>
+    <div class="wrap">
+      <div id="doadorLogin">
+        <div class="sec-head">
+          <span class="eyebrow">Área do doador</span>
+          <h2>Acompanhe a aplicação da sua doação</h2>
+          <p class="lead">Acesso individual ao seu painel: doações, recibos LIR, impacto pró-rata e evidências dos pacotes que você apadrinhou.</p>
+        </div>
+        <div class="login-box">
+          <h3 style="font-size:20px">Entrar no painel</h3>
+          <label for="loginEmail" class="small" style="display:block;text-align:left;margin-top:8px">E-mail cadastrado</label>
+          <input id="loginEmail" type="email" placeholder="seu@email.com" autocomplete="email">
+          <button onclick="loginDoador()">Entrar</button>
+          <div class="demo-hint">
+            <b>Demonstração</b> — use um destes e-mails fictícios:<br>
+            maria@email.com · esg@xyz.com.br · joao@email.com
+          </div>
+          <p class="small" style="margin-top:12px;text-align:left">
+            <b>LGPD:</b> doadores pessoa física aparecem <b>anônimos por padrão</b> nas listas públicas.
+            Nenhum CPF ou e-mail real é exposto. A exibição do nome é opcional e revogável.
+          </p>
+        </div>
+      </div>
+
+      <div id="doadorPanel" style="display:none">
+        <a href="#home" class="back-link" onclick="logoutDoador();navigate('home');return false;">← Sair e voltar aos pacotes</a>
+        <div class="sec-head" style="text-align:left;max-width:none">
+          <span class="eyebrow">Painel pessoal</span>
+          <h2 id="doadorTitle">Olá</h2>
+          <p class="lead" id="doadorMeta" style="margin-top:6px"></p>
+        </div>
+        <div class="kpi-grid" id="doadorKPIs" style="margin-bottom:26px"></div>
+
+        <div class="lgpd-toggle">
+          <input type="checkbox" id="doadorPublic">
+          <label for="doadorPublic"><b>Exibir meu nome publicamente</b> — por padrão você fica anônimo (consentimento LGPD, revogável a qualquer momento).</label>
+        </div>
+
+        <div class="two-col" style="margin-top:26px">
+          <div class="content-card" style="margin-top:0">
+            <h3>Minhas doações</h3>
+            <div id="doadorDoacoes"></div>
+          </div>
+          <div class="content-card" style="margin-top:0">
+            <h3>Meus recibos LIR</h3>
+            <div id="doadorRecibos"></div>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3>Meu impacto atribuído (pró-rata)</h3>
+          <div id="doadorImpacto"></div>
+        </div>
+
+        <div class="content-card">
+          <h3>Evidências dos pacotes que apoio</h3>
+          <div class="gallery-grid" id="doadorEvidencias" style="margin-top:4px"></div>
+        </div>
+
+        <div style="margin-top:24px">
+          <button class="btn btn-dark" onclick="logoutDoador()">Sair</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE · AUDITORIA                                             -->
+<!-- ============================================================ -->
+<div class="page" id="page-auditoria">
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Modo auditor · sem login</span>
+        <h2>Trilha de auditoria &amp; integridade</h2>
+        <p class="lead">Logs imutáveis de todas as ações sobre NFs, doações, evidências e pacotes. Exportável em CSV e protegido por hash de integridade.</p>
+      </div>
+
+      <div class="kpi-grid" style="margin-bottom:26px">
+        <div class="kpi-card"><div class="label">Eventos registrados</div><div class="value" id="auditCount">—</div><div class="sub">trilha completa</div></div>
+        <div class="kpi-card green"><div class="label">NFs publicadas</div><div class="value" id="auditNFs">—</div><div class="sub">auditáveis</div></div>
+        <div class="kpi-card orange"><div class="label">Alterações (update)</div><div class="value" id="auditMods">—</div><div class="sub">rastreadas</div></div>
+        <div class="kpi-card"><div class="label">Último evento</div><div class="value" id="auditLast" style="font-size:20px">—</div><div class="sub">data</div></div>
+      </div>
+
+      <div class="content-card" style="margin-top:0">
+        <h3>Hash de integridade dos dados publicados</h3>
+        <p class="small">A cada atualização da prestação de contas, o sistema gera um hash SHA-256 do conjunto completo de transações publicadas. Auditores podem cruzar com hashes históricos para garantir que nenhum dado foi alterado retroativamente.</p>
+        <div class="hash-block">
+          <span class="label">Hash de integridade (SHA-256, gerado a cada etapa) — DEMONSTRAÇÃO</span>
+          <code id="hashAtual">…</code>
+        </div>
+        <div class="hash-block">
+          <span class="label">Snapshot anterior (etapa prévia)</span>
+          <code>4e9f1a77c0b3d2e8f6a14b9c7d0e5f23a8b1c4d6e9f0a2b3c5d7e8f9a0b1c2d3e</code>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <div class="filters">
+          <select id="auditFilterEnt" onchange="renderAuditoria()">
+            <option value="">Todas as entidades</option>
+            <option>NotaFiscal</option><option>Doacao</option><option>Evidencia</option><option>Bloco</option>
+          </select>
+          <select id="auditFilterAcao" onchange="renderAuditoria()">
+            <option value="">Todas as ações</option>
+            <option>create</option><option>update</option><option>approve</option><option>publish</option>
+          </select>
+        </div>
+        <div id="auditList"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== SEALS + FOOTER ===== -->
+<div class="wrap" style="margin-top:24px">
+  <div class="seals">
+    <div class="cap">Programa oficial do Governo Federal</div>
+    <div class="seals-row">
+      <img src="assets/lir.png" class="lir-seal" alt="LIR — Lei de Incentivo à Reciclagem">
+      <img src="assets/mma.png" alt="Ministério do Meio Ambiente e Mudança do Clima — Governo Federal">
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#home" onclick="navigate('home');return false;" style="text-decoration:none">
+        <img src="assets/reciclamais_branco.png" alt="Instituto Recicla+ Ribeirão Preto" style="height:52px;width:auto;display:block">
+      </a>
+      <div class="cols">
+        <div class="col">
+          <h5>Esta plataforma</h5>
+          <p>Transparência &amp; Acompanhamento</p>
+          <p>Sede Operacional da CRRM — Obras Civis</p>
+          <p>LIR/MMA · Programa 2025-00001</p>
+          <p class="small" style="margin-top:8px;color:#7f8a93">Fonte da verdade: planilha-mestra no Drive do Instituto · atualizado a cada etapa.</p>
+        </div>
+        <div class="col">
+          <h5>Acesso rápido</h5>
+          <a href="#home" onclick="navigate('home');return false;">Pacotes para apadrinhar</a>
+          <a href="#financeiro" onclick="navigate('financeiro');return false;">Transparência financeira</a>
+          <a href="#nfs" onclick="navigate('nfs');return false;">Notas fiscais</a>
+          <a href="#evidencias" onclick="navigate('evidencias');return false;">Evidências</a>
+          <a href="#auditoria" onclick="navigate('auditoria');return false;">Trilha de auditoria</a>
+        </div>
+        <div class="col">
+          <h5>Links oficiais</h5>
+          <a href="https://flamatos.github.io/sede-crrm-obras/" target="_blank" rel="noopener">Site das Obras ↗</a>
+          <a href="https://projeto-recicla-mais-lir.com/" target="_blank" rel="noopener">Projeto principal ↗</a>
+          <a href="https://parcerias.transferegov.sistema.gov.br/ep-atos-prep-web/atos-prep/proposta/edicao/83508" target="_blank" rel="noopener">Proposta no Transferegov ↗</a>
+          <a href="https://www.in.gov.br/en/web/dou/-/portaria-sqa/mma-n-5-de-23-de-outubro-de-2025-665828612" target="_blank" rel="noopener">Portaria oficial (DOU) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Instituto Recicla+ Ribeirão Preto · Cooperativa Recicla Ribeirão MRM (CRRM)</span>
+      <span>Plataforma de demonstração · dados ilustrativos até a publicação dos dados reais</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-bg" id="modalBg" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+</div>
+
+<script>
+"use strict";
+// =========================================================
+// BASE DE DADOS — DEMONSTRAÇÃO (dados ilustrativos)
+// Estrutura preservada da plataforma original (DB) — lógica/JS mantida 100%.
+// Taxonomia unificada: 5 PACOTES apadrináveis (P01–P05) que agrupam os 13
+// itens SINAPI da Meta IV (total R$ 1.690.000) da obra real da Sede CRRM.
+// =========================================================
+const DB = {
+  projeto: {
+    nome: 'Sede Operacional da CRRM — Obras Civis (LIR/MMA)',
+    sei: '02000-011663/2025-41',
+    vigencia: '2026',
+    valor_total: 1690000
+  },
+
+  // ---- 5 PACOTES (substituem os blocos genéricos) ----
+  // Somatório das metas = R$ 1.690.000 (Meta IV / SINAPI)
+  blocos: [
+    {
+      id:'P01', tag:'PACOTE 01', nome:'Fundação & Terreno', icon:'🏗️',
+      valor_meta:307500, valor_arrecadado:215000,
+      tagline:'A base de tudo: terraplenagem, locação e fundação do galpão.',
+      prazo:'30-60 dias', parceiro:'Habisolute Engenharia',
+      ticket:'R$ 10.000 a R$ 60.000', categoria:'Estrutura inferior',
+      foto:'', status:'em_andamento', execucao_pct:55,
+      itens_sinapi:'IV.1 Serviços preliminares · IV.2 Terraplenagem · IV.3 Fundação',
+      impacto_anual:{kg:0, co2:0, agua:0, catadores_apoiados:30},
+      entregas:['Canteiro de obra e locação','Terraplenagem e regularização do terreno','Brocas, blocos, concreto, armadura e impermeabilização'],
+      contras:['Orçamento por etapa com base SINAPI','ART/RRT do responsável técnico','NF vinculada a cada serviço executado'],
+      etapas:[
+        {ordem:1, descricao:'Mobilização do canteiro e locação da obra', data:'2026-01-15', status:'concluida'},
+        {ordem:2, descricao:'Terraplenagem e regularização do terreno', data:'2026-02-05', status:'concluida'},
+        {ordem:3, descricao:'Execução das brocas e blocos de fundação', data:'2026-03-10', status:'em_andamento'},
+        {ordem:4, descricao:'Concretagem, armadura e impermeabilização', data:'2026-04-20', status:'futura'}
+      ]
+    },
+    {
+      id:'P02', tag:'PACOTE 02', nome:'Estrutura Metálica & Cobertura', icon:'🏛️',
+      valor_meta:376120, valor_arrecadado:198000,
+      tagline:'O esqueleto do galpão: estrutura metálica, mezanino e cobertura.',
+      prazo:'45-75 dias', parceiro:'Habisolute Engenharia',
+      ticket:'R$ 20.000 a R$ 100.000', categoria:'Superestrutura',
+      foto:'', status:'em_andamento', execucao_pct:35,
+      itens_sinapi:'IV.6 Mezanino metálico · IV.7 Estrutura metálica e cobertura (galvalume) · IV.4 Muros e reforços',
+      impacto_anual:{kg:120000, co2:84000, agua:0, catadores_apoiados:30},
+      entregas:['Estrutura metálica do galpão','Mezanino metálico','Cobertura em galvalume','Muros de divisa e reforços estruturais'],
+      contras:['Memória de cálculo estrutural','NF por etapa de montagem','Conciliação bancária antes de publicar'],
+      etapas:[
+        {ordem:1, descricao:'Fabricação da estrutura metálica', data:'2026-03-01', status:'concluida'},
+        {ordem:2, descricao:'Montagem dos pórticos e mezanino', data:'2026-04-10', status:'em_andamento'},
+        {ordem:3, descricao:'Instalação da cobertura em galvalume', data:'2026-05-15', status:'futura'},
+        {ordem:4, descricao:'Execução de muros e reforços', data:'2026-06-01', status:'futura'}
+      ]
+    },
+    {
+      id:'P03', tag:'PACOTE 03', nome:'Vedações & Acabamentos', icon:'🧱',
+      valor_meta:406512, valor_arrecadado:142000,
+      tagline:'Fechamento e acabamento: alvenaria, pisos, revestimentos.',
+      prazo:'45-90 dias', parceiro:'Habisolute Engenharia',
+      ticket:'R$ 15.000 a R$ 80.000', categoria:'Vedação e acabamento',
+      foto:'', status:'em_andamento', execucao_pct:18,
+      itens_sinapi:'IV.5 Alvenaria e vedações · IV.11 Revestimentos, pisos e impermeabilização',
+      impacto_anual:{kg:80000, co2:56000, agua:120000, catadores_apoiados:30},
+      entregas:['Alvenaria e vedações','Revestimentos de parede','Pisos industriais','Impermeabilização de áreas molhadas'],
+      contras:['Especificação técnica por ambiente','NF de material e de mão de obra','Publicação só após conciliação'],
+      etapas:[
+        {ordem:1, descricao:'Execução da alvenaria de vedação', data:'2026-05-01', status:'em_andamento'},
+        {ordem:2, descricao:'Contrapiso e impermeabilização', data:'2026-06-10', status:'futura'},
+        {ordem:3, descricao:'Revestimentos e pisos industriais', data:'2026-07-05', status:'futura'},
+        {ordem:4, descricao:'Acabamentos finais', data:'2026-07-25', status:'futura'}
+      ]
+    },
+    {
+      id:'P04', tag:'PACOTE 04', nome:'Instalações & Segurança', icon:'⚡',
+      valor_meta:428532, valor_arrecadado:255000,
+      tagline:'Infraestrutura técnica: hidro, elétrica, SPDA e incêndio.',
+      prazo:'45-75 dias', parceiro:'Habisolute Engenharia',
+      ticket:'R$ 15.000 a R$ 70.000', categoria:'Instalações prediais',
+      foto:'', status:'em_andamento', execucao_pct:48,
+      itens_sinapi:'IV.8 Hidrossanitárias e pluviais · IV.9 Elétricas e SPDA · IV.10 Prevenção e combate a incêndio',
+      impacto_anual:{kg:0, co2:0, agua:240000, catadores_apoiados:30},
+      entregas:['Instalações hidrossanitárias e pluviais','Instalações elétricas e SPDA','Sistema de prevenção e combate a incêndio'],
+      contras:['Projetos das instalações aprovados','ART específica por disciplina','NF conciliada antes de publicar'],
+      etapas:[
+        {ordem:1, descricao:'Instalações hidrossanitárias e pluviais', data:'2026-04-15', status:'concluida'},
+        {ordem:2, descricao:'Instalações elétricas e SPDA', data:'2026-05-20', status:'em_andamento'},
+        {ordem:3, descricao:'Sistema de combate a incêndio', data:'2026-06-25', status:'futura'},
+        {ordem:4, descricao:'Comissionamento e testes', data:'2026-07-15', status:'futura'}
+      ]
+    },
+    {
+      id:'P05', tag:'PACOTE 05', nome:'Esquadrias & Administração', icon:'🚪',
+      valor_meta:171336, valor_arrecadado:96000,
+      tagline:'Fechamentos e gestão da obra: esquadrias e administração local.',
+      prazo:'30-60 dias', parceiro:'WTEEC + Habisolute',
+      ticket:'R$ 10.000 a R$ 40.000', categoria:'Esquadrias e gestão',
+      foto:'', status:'em_andamento', execucao_pct:25,
+      itens_sinapi:'IV.12 Esquadrias (portas, portões e janelas) · IV.13 Administração local da obra',
+      impacto_anual:{kg:0, co2:0, agua:0, catadores_apoiados:30},
+      entregas:['Portas, portões e janelas','Mestre de obras e engenheiro residente','Gestão e fiscalização local da obra'],
+      contras:['Administração local com diário de obra','Engenheiro residente com ART','Prestação de contas mensal'],
+      etapas:[
+        {ordem:1, descricao:'Mobilização da administração local', data:'2026-01-20', status:'concluida'},
+        {ordem:2, descricao:'Aquisição das esquadrias', data:'2026-06-01', status:'em_andamento'},
+        {ordem:3, descricao:'Instalação de portas, portões e janelas', data:'2026-07-10', status:'futura'},
+        {ordem:4, descricao:'Encerramento e prestação de contas', data:'2026-07-30', status:'futura'}
+      ]
+    }
+  ],
+
+  // ---- Doadores (DEMONSTRAÇÃO · PF anônimos por padrão · sem CPF/e-mail reais) ----
+  doadores: [
+    {id:1, nome:'Empresa XYZ Indústria S.A.', cnpj:'12.345.678/0001-90', perfil:'PJ', email:'esg@xyz.com.br', publico:true},
+    {id:2, nome:'Construtora ABC Ltda', cnpj:'23.456.789/0001-01', perfil:'PJ', email:'contato@abc.com.br', publico:true},
+    {id:3, nome:'Maria Silva', cpf:'***.345.678-**', perfil:'PF', email:'maria@email.com', publico:false},
+    {id:4, nome:'João Santos', cpf:'***.456.789-**', perfil:'PF', email:'joao@email.com', publico:false},
+    {id:5, nome:'Anônimo', perfil:'PF', email:'anon1@email.com', publico:false},
+    {id:6, nome:'Anônimo', perfil:'PF', email:'anon2@email.com', publico:false},
+    {id:7, nome:'Indústria DEF S/A', cnpj:'34.567.890/0001-12', perfil:'PJ', email:'sustentab@def.com.br', publico:true},
+    {id:8, nome:'Anônimo', perfil:'PF', email:'anon3@email.com', publico:false},
+    {id:9, nome:'Carlos Mendes', cpf:'***.567.890-**', perfil:'PF', email:'carlos@email.com', publico:false},
+    {id:10, nome:'Anônima', perfil:'PF', email:'anon4@email.com', publico:false},
+    {id:11, nome:'Patrícia Rocha', cpf:'***.678.901-**', perfil:'PF', email:'patricia@email.com', publico:false},
+    {id:12, nome:'Empresa GHI Comércio Ltda', cnpj:'45.678.901/0001-23', perfil:'PJ', email:'rh@ghi.com.br', publico:true},
+    {id:13, nome:'Apoiador Vakinha', perfil:'VAK', email:'vak1@email.com', publico:false},
+    {id:14, nome:'Apoiador Vakinha', perfil:'VAK', email:'vak2@email.com', publico:false},
+    {id:15, nome:'Apoiador Vakinha', perfil:'VAK', email:'vak3@email.com', publico:false}
+  ],
+
+  // ---- Doações (DEMONSTRAÇÃO) · vinculadas aos 5 pacotes ----
+  doacoes: [
+    {id:101, doador:1, bloco:'P01', valor:80000, data:'2026-01-12', modalidade:'LIR_PJ', recibo:'REC-2026-0101'},
+    {id:102, doador:7, bloco:'P01', valor:60000, data:'2026-01-25', modalidade:'LIR_PJ', recibo:'REC-2026-0102'},
+    {id:103, doador:2, bloco:'P01', valor:50000, data:'2026-02-08', modalidade:'LIR_PJ', recibo:'REC-2026-0103'},
+    {id:104, doador:3, bloco:'P01', valor:8000, data:'2026-02-18', modalidade:'LIR_PF', recibo:'REC-2026-0104'},
+    {id:105, doador:13, bloco:'P01', valor:1500, data:'2026-03-02', modalidade:'VAKINHA', recibo:'REC-2026-0105'},
+    {id:106, doador:9, bloco:'P01', valor:15500, data:'2026-03-10', modalidade:'LIR_PF', recibo:'REC-2026-0106'},
+
+    {id:107, doador:1, bloco:'P02', valor:90000, data:'2026-02-20', modalidade:'LIR_PJ', recibo:'REC-2026-0107'},
+    {id:108, doador:12, bloco:'P02', valor:60000, data:'2026-03-05', modalidade:'LIR_PJ', recibo:'REC-2026-0108'},
+    {id:109, doador:4, bloco:'P02', valor:30000, data:'2026-03-18', modalidade:'LIR_PF', recibo:'REC-2026-0109'},
+    {id:110, doador:14, bloco:'P02', valor:2000, data:'2026-03-28', modalidade:'VAKINHA', recibo:'REC-2026-0110'},
+    {id:111, doador:8, bloco:'P02', valor:16000, data:'2026-04-08', modalidade:'LIR_PF', recibo:'REC-2026-0111'},
+
+    {id:112, doador:7, bloco:'P03', valor:70000, data:'2026-03-12', modalidade:'LIR_PJ', recibo:'REC-2026-0112'},
+    {id:113, doador:2, bloco:'P03', valor:40000, data:'2026-03-25', modalidade:'LIR_PJ', recibo:'REC-2026-0113'},
+    {id:114, doador:11, bloco:'P03', valor:20000, data:'2026-04-10', modalidade:'LIR_PF', recibo:'REC-2026-0114'},
+    {id:115, doador:15, bloco:'P03', valor:3000, data:'2026-04-20', modalidade:'VAKINHA', recibo:'REC-2026-0115'},
+    {id:116, doador:5, bloco:'P03', valor:9000, data:'2026-04-28', modalidade:'LIR_PF', recibo:'REC-2026-0116'},
+
+    {id:117, doador:1, bloco:'P04', valor:100000, data:'2026-02-10', modalidade:'LIR_PJ', recibo:'REC-2026-0117'},
+    {id:118, doador:12, bloco:'P04', valor:80000, data:'2026-03-01', modalidade:'LIR_PJ', recibo:'REC-2026-0118'},
+    {id:119, doador:7, bloco:'P04', valor:50000, data:'2026-03-20', modalidade:'LIR_PJ', recibo:'REC-2026-0119'},
+    {id:120, doador:9, bloco:'P04', valor:15000, data:'2026-04-05', modalidade:'LIR_PF', recibo:'REC-2026-0120'},
+    {id:121, doador:6, bloco:'P04', valor:10000, data:'2026-04-15', modalidade:'LIR_PF', recibo:'REC-2026-0121'},
+
+    {id:122, doador:2, bloco:'P05', valor:50000, data:'2026-01-22', modalidade:'LIR_PJ', recibo:'REC-2026-0122'},
+    {id:123, doador:1, bloco:'P05', valor:30000, data:'2026-02-15', modalidade:'LIR_PJ', recibo:'REC-2026-0123'},
+    {id:124, doador:10, bloco:'P05', valor:11000, data:'2026-03-12', modalidade:'LIR_PF', recibo:'REC-2026-0124'},
+    {id:125, doador:13, bloco:'P05', valor:5000, data:'2026-04-02', modalidade:'VAKINHA', recibo:'REC-2026-0125'}
+  ],
+
+  // ---- Notas fiscais (DEMONSTRAÇÃO) · 8 estados possíveis ----
+  notas_fiscais: [
+    {numero:'12301', data:'2026-01-15', fornecedor:'Locação Canteiro RP Ltda', cnpj:'30.111.222/0001-33', valor:13249, bloco:'P01', categoria:'Serviços preliminares', etapa:'Canteiro e locação', status:'Publicada'},
+    {numero:'12302', data:'2026-02-05', fornecedor:'Terraplenagem Sul Ltda', cnpj:'30.222.333/0001-44', valor:37233, bloco:'P01', categoria:'Terraplenagem', etapa:'Regularização do terreno', status:'Publicada'},
+    {numero:'12303', data:'2026-03-08', fornecedor:'Concreteira Ribeirão S.A.', cnpj:'30.333.444/0001-55', valor:96000, bloco:'P01', categoria:'Fundação', etapa:'Brocas e blocos', status:'Publicada'},
+    {numero:'12304', data:'2026-03-28', fornecedor:'Armaduras & Cia Ltda', cnpj:'30.444.555/0001-66', valor:60000, bloco:'P01', categoria:'Fundação', etapa:'Armadura e concretagem', status:'Conciliada'},
+    {numero:'12305', data:'2026-04-18', fornecedor:'Impermeabiliza Pro MEI', cnpj:'30.555.666/0001-77', valor:38000, bloco:'P01', categoria:'Fundação', etapa:'Impermeabilização', status:'Aprovada'},
+
+    {numero:'12306', data:'2026-03-05', fornecedor:'Metálica Estrutural RR Ltda', cnpj:'30.666.777/0001-88', valor:120000, bloco:'P02', categoria:'Estrutura', etapa:'Fabricação estrutura metálica', status:'Publicada'},
+    {numero:'12307', data:'2026-04-02', fornecedor:'Metálica Estrutural RR Ltda', cnpj:'30.666.777/0001-88', valor:20272, bloco:'P02', categoria:'Estrutura', etapa:'Mezanino metálico', status:'Publicada'},
+    {numero:'12308', data:'2026-04-15', fornecedor:'Coberturas Galvalume SP', cnpj:'30.777.888/0001-99', valor:75000, bloco:'P02', categoria:'Cobertura', etapa:'Cobertura galvalume (parcial)', status:'Aprovada'},
+    {numero:'12309', data:'2026-04-22', fornecedor:'Construtora Muros Ltda', cnpj:'30.888.999/0001-10', valor:45000, bloco:'P02', categoria:'Vedações', etapa:'Muros de divisa', status:'Pendente'},
+
+    {numero:'12310', data:'2026-04-30', fornecedor:'Alvenaria Sustentável MEI', cnpj:'30.999.111/0001-21', valor:50000, bloco:'P03', categoria:'Vedações', etapa:'Alvenaria de vedação', status:'Publicada'},
+    {numero:'12311', data:'2026-05-12', fornecedor:'Pisos Industriais SP Ltda', cnpj:'31.111.222/0001-32', valor:80000, bloco:'P03', categoria:'Acabamentos', etapa:'Contrapiso e piso industrial', status:'Aprovada'},
+    {numero:'12312', data:'2026-05-20', fornecedor:'Revestimentos RP Ltda', cnpj:'31.222.333/0001-43', valor:42000, bloco:'P03', categoria:'Acabamentos', etapa:'Revestimentos de parede', status:'Pendente'},
+
+    {numero:'12313', data:'2026-04-10', fornecedor:'Hidráulica Predial Ltda', cnpj:'31.333.444/0001-54', valor:128265, bloco:'P04', categoria:'Instalações', etapa:'Hidrossanitárias e pluviais', status:'Publicada'},
+    {numero:'12314', data:'2026-05-05', fornecedor:'Elétrica & SPDA Engenharia', cnpj:'31.444.555/0001-65', valor:130000, bloco:'P04', categoria:'Instalações', etapa:'Instalações elétricas e SPDA', status:'Publicada'},
+    {numero:'12315', data:'2026-05-25', fornecedor:'Incêndio Segurança Ltda', cnpj:'31.555.666/0001-76', valor:53654, bloco:'P04', categoria:'Incêndio', etapa:'Prevenção e combate a incêndio', status:'Aprovada'},
+
+    {numero:'12316', data:'2026-01-20', fornecedor:'WTEEC Engenharia Ltda', cnpj:'37.683.697/0001-52', valor:18789, bloco:'P05', categoria:'Administração', etapa:'Administração local (mês 1-3)', status:'Publicada'},
+    {numero:'12317', data:'2026-04-30', fornecedor:'WTEEC Engenharia Ltda', cnpj:'37.683.697/0001-52', valor:18790, bloco:'P05', categoria:'Administração', etapa:'Administração local (mês 4-6)', status:'Conciliada'},
+    {numero:'12318', data:'2026-06-01', fornecedor:'Esquadrias Metálicas RP', cnpj:'31.666.777/0001-87', valor:134136, bloco:'P05', categoria:'Esquadrias', etapa:'Portas, portões e janelas', status:'Pendente'}
+  ],
+
+  // ---- Evidências (DEMONSTRAÇÃO) ----
+  evidencias: [
+    {id:1, bloco:'P01', tipo:'Foto', titulo:'Canteiro de obra montado', data:'2026-01-16', icon:'📸'},
+    {id:2, bloco:'P01', tipo:'Foto', titulo:'Terraplenagem concluída', data:'2026-02-06', icon:'📸'},
+    {id:3, bloco:'P01', tipo:'Foto', titulo:'Brocas e blocos de fundação', data:'2026-03-10', icon:'📸'},
+    {id:4, bloco:'P01', tipo:'Documento', titulo:'ART da fundação', data:'2026-01-14', icon:'📄'},
+    {id:5, bloco:'P02', tipo:'Foto', titulo:'Estrutura metálica em fabricação', data:'2026-03-02', icon:'📸'},
+    {id:6, bloco:'P02', tipo:'Vídeo', titulo:'Montagem dos pórticos', data:'2026-04-10', icon:'🎬'},
+    {id:7, bloco:'P02', tipo:'Documento', titulo:'Memória de cálculo estrutural', data:'2026-02-28', icon:'📄'},
+    {id:8, bloco:'P03', tipo:'Foto', titulo:'Alvenaria de vedação em execução', data:'2026-05-02', icon:'📸'},
+    {id:9, bloco:'P03', tipo:'Foto', titulo:'Contrapiso lançado', data:'2026-05-14', icon:'📸'},
+    {id:10, bloco:'P03', tipo:'Documento', titulo:'Especificação de revestimentos', data:'2026-04-25', icon:'📄'},
+    {id:11, bloco:'P04', tipo:'Foto', titulo:'Tubulação hidrossanitária instalada', data:'2026-04-12', icon:'📸'},
+    {id:12, bloco:'P04', tipo:'Foto', titulo:'Quadro elétrico e SPDA', data:'2026-05-08', icon:'📸'},
+    {id:13, bloco:'P04', tipo:'Vídeo', titulo:'Teste do sistema de incêndio', data:'2026-05-26', icon:'🎬'},
+    {id:14, bloco:'P04', tipo:'Documento', titulo:'Projeto elétrico aprovado', data:'2026-04-08', icon:'📄'},
+    {id:15, bloco:'P05', tipo:'Foto', titulo:'Diário de obra · administração local', data:'2026-02-15', icon:'📸'},
+    {id:16, bloco:'P05', tipo:'Documento', titulo:'Cronograma físico-financeiro', data:'2026-01-22', icon:'📄'},
+    {id:17, bloco:'P05', tipo:'Foto', titulo:'Esquadrias entregues no canteiro', data:'2026-06-02', icon:'📸'}
+  ],
+
+  audit_log: [
+    {ts:'2026-05-26 16:10:44', entidade:'Evidencia', acao:'publish', desc:'Vídeo "Teste do sistema de incêndio" publicado · Pacote 04', user:'obras@recicla'},
+    {ts:'2026-05-25 14:32:18', entidade:'NotaFiscal', acao:'approve', desc:'NF 12315 aprovada (4-eyes) · Incêndio · R$ 53.654', user:'maria@recicla'},
+    {ts:'2026-05-20 11:15:42', entidade:'Doacao', acao:'create', desc:'Doação R$ 50.000 · Indústria DEF · Pacote 04', user:'sustentab@def.com.br'},
+    {ts:'2026-05-12 09:22:10', entidade:'NotaFiscal', acao:'create', desc:'NF 12311 recebida · pendente conciliação · Pacote 03', user:'sistema (e-mail nf@recicla)'},
+    {ts:'2026-05-05 18:35:55', entidade:'NotaFiscal', acao:'publish', desc:'NF 12314 publicada · Elétrica & SPDA · R$ 130.000', user:'sistema'},
+    {ts:'2026-04-30 15:12:48', entidade:'NotaFiscal', acao:'update', desc:'NF 12317 status: aprovada → conciliada (extrato batido)', user:'joao@recicla'},
+    {ts:'2026-04-22 10:42:17', entidade:'Bloco', acao:'update', desc:'Execução do Pacote 01 atualizada para 55% · justificativa: fundação em andamento', user:'rodrigo@recicla'},
+    {ts:'2026-04-15 17:28:39', entidade:'Doacao', acao:'create', desc:'Doação R$ 100.000 · Empresa XYZ · Pacote 04', user:'esg@xyz.com.br'},
+    {ts:'2026-04-12 14:05:21', entidade:'Evidencia', acao:'publish', desc:'Foto "Tubulação hidrossanitária" publicada · Pacote 04', user:'obras@recicla'},
+    {ts:'2026-04-10 11:45:33', entidade:'NotaFiscal', acao:'publish', desc:'NF 12313 publicada · Hidráulica Predial · R$ 128.265', user:'sistema'},
+    {ts:'2026-04-02 16:22:08', entidade:'NotaFiscal', acao:'approve', desc:'NF 12307 aprovada (4-eyes) · Mezanino metálico', user:'maria@recicla'},
+    {ts:'2026-03-08 09:14:02', entidade:'NotaFiscal', acao:'publish', desc:'NF 12303 publicada · Concreteira Ribeirão · R$ 96.000', user:'sistema'}
+  ]
+};
+
+// =========================================================
+// HELPERS (preservados da plataforma original)
+// =========================================================
+function fmt(v){ return 'R$ ' + Number(v||0).toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:0}); }
+function fmtMoeda(v){ return 'R$ ' + Number(v||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function fmtPct(v){ return Number(v||0).toFixed(1) + '%'; }
+function getBloco(id){ return DB.blocos.find(b => b.id === id); }
+function getDoador(id){ return DB.doadores.find(d => d.id === id); }
+function doacoesDoBloco(bid){ return DB.doacoes.filter(d => d.bloco === bid); }
+function nfsDoBloco(bid){ return DB.notas_fiscais.filter(n => n.bloco === bid); }
+function evidenciasDoBloco(bid){ return DB.evidencias.filter(e => e.bloco === bid); }
+function totalArrecadado(){ return DB.doacoes.reduce((s,d) => s + d.valor, 0); }
+function totalGasto(){ return DB.notas_fiscais.filter(n => ['Publicada','Conciliada'].includes(n.status)).reduce((s,n) => s + n.valor, 0); }
+function totalDoadores(){ return [...new Set(DB.doacoes.map(d => d.doador))].length; }
+
+// =========================================================
+// NAVIGATION (preservada)
+// =========================================================
+function navigate(page, param){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav.main-nav a').forEach(a => a.classList.remove('active'));
+  const pageEl = document.getElementById('page-' + page);
+  if (pageEl) pageEl.classList.add('active');
+  const navA = document.querySelector('nav.main-nav a[data-page="' + page + '"]');
+  if (navA) navA.classList.add('active');
+  if (param) location.hash = page + '/' + param;
+  else location.hash = page;
+  if (page === 'home') renderHome();
+  else if (page === 'bloco') renderBloco(param);
+  else if (page === 'financeiro') renderFinanceiro();
+  else if (page === 'nfs') renderNFs();
+  else if (page === 'evidencias') renderEvidencias();
+  else if (page === 'doador') renderDoador();
+  else if (page === 'auditoria') renderAuditoria();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function initRouting(){
+  const hash = location.hash.replace('#','');
+  if (!hash){ navigate('home'); return; }
+  const parts = hash.split('/');
+  navigate(parts[0], parts[1]);
+}
+
+// =========================================================
+// RENDER · HOME
+// =========================================================
+function renderHome(){
+  const arr = totalArrecadado();
+  const meta = DB.blocos.reduce((s,b) => s + b.valor_meta, 0);
+  const gasto = totalGasto();
+  const ndoad = totalDoadores();
+  document.getElementById('homeTotalBar').innerHTML = `
+    <div class="total-stat"><div class="label">Arrecadado</div><div class="value">${fmt(arr)}</div><div class="sublabel">de ${fmt(meta)} · meta da Meta IV</div></div>
+    <div class="total-stat"><div class="label">Executado</div><div class="value">${fmt(gasto)}</div><div class="sublabel">${DB.notas_fiscais.filter(n=>['Publicada','Conciliada'].includes(n.status)).length} NFs publicadas</div></div>
+    <div class="total-stat"><div class="label">Doadores</div><div class="value">${ndoad}</div><div class="sublabel">PJ · PF · Vakinha</div></div>
+    <div class="total-stat"><div class="label">% da obra</div><div class="value">${fmtPct((arr/DB.projeto.valor_total)*100)}</div><div class="sublabel">${fmt(arr)} de ${fmt(DB.projeto.valor_total)}</div></div>`;
+
+  const gridHtml = DB.blocos.map(b => {
+    const pctCap = (b.valor_arrecadado / b.valor_meta) * 100;
+    const ndoad = doacoesDoBloco(b.id).length;
+    return `<div class="card" onclick="navigate('bloco','${b.id}')">
+      <div class="card-photo" style="${b.foto ? `background-image:url('${b.foto}');background-size:cover;background-position:center` : ''}">
+        ${!b.foto ? `<span class="icon-bg">${b.icon}</span>` : ''}
+        <div class="card-photo-overlay"><div class="block-tag">${b.tag}</div><div class="block-name">${b.nome}</div></div>
+      </div>
+      <div class="card-body">
+        <div class="meta-row">
+          <span class="meta-pill">${b.ticket}</span>
+          <span class="meta-pill">${b.prazo}</span>
+        </div>
+        <div class="tagline">${b.tagline}</div>
+        <div class="thermometer">
+          <div class="thermometer-bar"><div class="thermometer-fill" style="width:${Math.min(pctCap,100)}%"></div></div>
+          <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:11px;color:var(--muted)">
+            <span><b style="color:var(--verde-montanha)">${fmt(b.valor_arrecadado)}</b> de ${fmt(b.valor_meta)}</span>
+            <span>${fmtPct(pctCap)} captado</span>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="stat-label">Doadores</div><div class="stat-value">${ndoad}</div></div>
+          <div class="stat"><div class="stat-label">Execução</div><div class="stat-value">${b.execucao_pct}%</div></div>
+          <div class="stat"><div class="stat-label">NFs</div><div class="stat-value">${nfsDoBloco(b.id).length}</div></div>
+        </div>
+        <div class="parceria"><span class="parceria-label">Execução:</span><span class="parceria-name">${b.parceiro}</span></div>
+        <a class="cta" href="#" onclick="event.stopPropagation();navigate('bloco','${b.id}');return false;">Ver detalhes →</a>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('homeBlocosGrid').innerHTML = gridHtml;
+}
+
+// =========================================================
+// RENDER · BLOCO DETALHADO
+// =========================================================
+function renderBloco(id){
+  const b = getBloco(id);
+  if (!b){ navigate('home'); return; }
+  const doacoes = doacoesDoBloco(id);
+  const nfs = nfsDoBloco(id);
+  const evs = evidenciasDoBloco(id);
+  const totalArr = doacoes.reduce((s,d) => s + d.valor, 0);
+  const pctCap = (totalArr / b.valor_meta) * 100;
+  const totalGastoBloco = nfs.filter(n => ['Publicada','Conciliada'].includes(n.status)).reduce((s,n) => s + n.valor, 0);
+
+  document.getElementById('blocoTag').textContent = b.tag;
+  document.getElementById('blocoNome').innerHTML = `${b.nome} <span class="accent">·</span>`;
+  document.getElementById('blocoMeta').textContent = `${b.ticket} · ${b.prazo} · ${b.parceiro}`;
+
+  document.getElementById('blocoFinDetail').innerHTML = `
+    <div class="big-thermo">
+      <div style="font-size:11px;color:var(--verde-montanha);letter-spacing:.12em;margin-bottom:8px;font-weight:700;text-transform:uppercase">Captação</div>
+      <div class="big-thermo-bar"><div class="big-thermo-fill" style="width:${Math.min(pctCap,100)}%"></div></div>
+      <div class="big-thermo-info"><span><b>${fmt(totalArr)}</b> arrecadado</span><span>de ${fmt(b.valor_meta)} (${fmtPct(pctCap)})</span></div>
+    </div>
+    <div class="big-thermo">
+      <div style="font-size:11px;color:var(--verde-montanha);letter-spacing:.12em;margin-bottom:8px;font-weight:700;text-transform:uppercase">Execução física</div>
+      <div class="big-thermo-bar"><div class="big-thermo-fill" style="width:${b.execucao_pct}%;background:linear-gradient(90deg,var(--oc-900),var(--verde-montanha))"></div></div>
+      <div class="big-thermo-info"><span><b>${b.execucao_pct}%</b> executado</span><span>${fmt(totalGastoBloco)} em NFs publicadas</span></div>
+    </div>`;
+
+  const donorsHtml = doacoes.map(d => {
+    const dor = getDoador(d.doador);
+    const pct = (d.valor / totalArr) * 100;
+    const nome = dor.publico ? dor.nome : 'Doador anônimo';
+    return `<div class="donor-row">
+      <div>
+        <span class="donor-name">${nome} <span class="perfil perfil-${dor.perfil}">${dor.perfil}</span></span>
+        <div class="small">${d.modalidade} · ${d.data} · Recibo ${d.recibo}</div>
+      </div>
+      <div class="donor-vals"><div class="donor-val">${fmtMoeda(d.valor)}</div><div class="donor-pct">${fmtPct(pct)} pró-rata</div></div>
+    </div>`;
+  }).join('');
+  document.getElementById('blocoDonors').innerHTML = donorsHtml || '<p class="small">Sem doações registradas neste pacote.</p>';
+
+  document.getElementById('blocoTimeline').innerHTML = b.etapas.map(e => `
+    <div class="timeline-item ${e.status === 'concluida' ? 'done' : (e.status === 'em_andamento' ? '' : 'future')}">
+      <div class="date">${e.data} · ${e.status === 'concluida' ? '✓ Concluída' : e.status === 'em_andamento' ? '◐ Em andamento' : '○ Futura'}</div>
+      <div class="event">${e.descricao}</div>
+    </div>`).join('');
+
+  document.getElementById('blocoNFs').innerHTML = nfs.length ? `
+    <div class="table-wrap" style="box-shadow:none">
+    <table>
+      <thead><tr><th>Nº</th><th>Data</th><th>Fornecedor</th><th class="num">Valor</th><th>Etapa</th><th>Status</th></tr></thead>
+      <tbody>${nfs.map(n => `
+        <tr>
+          <td><a href="#" onclick="showNF('${n.numero}');return false;">${n.numero}</a></td>
+          <td>${n.data}</td><td>${n.fornecedor}</td>
+          <td class="num">${fmtMoeda(n.valor)}</td>
+          <td class="small">${n.etapa}</td>
+          <td><span class="pill pill-${n.status === 'Publicada' ? 'success' : n.status === 'Conciliada' ? 'info' : n.status === 'Aprovada' ? 'warn' : 'muted'}">${n.status}</span></td>
+        </tr>`).join('')}</tbody>
+    </table></div>
+    <p class="small" style="margin-top:12px"><strong>Total executado:</strong> ${fmtMoeda(totalGastoBloco)} em ${nfs.filter(n=>['Publicada','Conciliada'].includes(n.status)).length} NFs publicadas.</p>` : '<p class="small">Sem NFs registradas ainda.</p>';
+
+  document.getElementById('blocoEvidencias').innerHTML = evs.length ? evs.map(e => `
+    <div class="gallery-item" onclick="showEvidencia(${e.id})" ${b.foto ? `style="background-image:url('${b.foto}')"` : ''}>
+      <span class="gallery-icon">${e.icon} ${e.tipo.toUpperCase()}</span>
+      <div class="gallery-cap">${e.titulo}<br><span style="opacity:0.7;font-size:10px">${e.data}</span></div>
+    </div>`).join('') : '<p class="small">Evidências serão publicadas conforme as etapas avançam.</p>';
+
+  document.getElementById('blocoSummary').innerHTML = `
+    <p style="font-size:13px"><strong>Itens SINAPI:</strong> ${b.itens_sinapi}</p>
+    <p style="font-size:13px;margin-top:6px"><strong>Categoria:</strong> ${b.categoria}</p>
+    <p style="font-size:13px;margin-top:6px"><strong>Status:</strong> ${b.status === 'concluido' ? '<span class="pill pill-success">Concluído</span>' : b.status === 'em_andamento' ? '<span class="pill pill-warn">Em andamento</span>' : '<span class="pill pill-muted">Planejado</span>'}</p>
+    <p class="small" style="margin-top:12px;font-style:italic">"${b.tagline}"</p>
+    <p class="small" style="margin-top:12px"><strong>O que é entregue:</strong></p>
+    <ul style="font-size:12.5px;margin-left:16px;margin-top:4px">${b.entregas.map(e => `<li>${e}</li>`).join('')}</ul>`;
+
+  document.getElementById('blocoImpacto').innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px">
+      <div style="background:var(--paper);padding:10px;border-radius:8px">
+        <div class="small" style="font-size:9px;letter-spacing:.06em;text-transform:uppercase">Kg desviados</div>
+        <div style="font-family:var(--font-head);font-size:18px;font-weight:800;color:var(--oc-900)">${b.impacto_anual.kg.toLocaleString('pt-BR')}</div>
+      </div>
+      <div style="background:var(--paper);padding:10px;border-radius:8px">
+        <div class="small" style="font-size:9px;letter-spacing:.06em;text-transform:uppercase">CO₂ evitado</div>
+        <div style="font-family:var(--font-head);font-size:18px;font-weight:800;color:var(--oc-900)">${b.impacto_anual.co2.toLocaleString('pt-BR')} kg</div>
+      </div>
+      <div style="background:var(--paper);padding:10px;border-radius:8px">
+        <div class="small" style="font-size:9px;letter-spacing:.06em;text-transform:uppercase">Água poupada</div>
+        <div style="font-family:var(--font-head);font-size:18px;font-weight:800;color:var(--oc-900)">${b.impacto_anual.agua.toLocaleString('pt-BR')} L</div>
+      </div>
+      <div style="background:var(--paper);padding:10px;border-radius:8px">
+        <div class="small" style="font-size:9px;letter-spacing:.06em;text-transform:uppercase">Catadores</div>
+        <div style="font-family:var(--font-head);font-size:18px;font-weight:800;color:var(--oc-900)">${b.impacto_anual.catadores_apoiados}</div>
+      </div>
+    </div>
+    <p class="small" style="margin-top:10px">Cada doador recebe atribuição <strong>pró-rata</strong> destes impactos, proporcional ao valor doado. (Projeção após a sede entrar em operação.)</p>`;
+
+  document.getElementById('blocoContras').innerHTML = b.contras.map(c => `<li style="padding:4px 0;border-bottom:1px solid var(--border)">✓ ${c}</li>`).join('');
+}
+
+// =========================================================
+// RENDER · FINANCEIRO
+// =========================================================
+function renderFinanceiro(){
+  const arr = totalArrecadado();
+  const gasto = totalGasto();
+  const saldo = arr - gasto;
+  const meta = DB.blocos.reduce((s,b)=>s+b.valor_meta,0);
+  document.getElementById('finKPIs').innerHTML = `
+    <div class="kpi-card green"><div class="label">Meta total</div><div class="value">${fmt(meta)}</div><div class="sub">5 pacotes (Meta IV)</div></div>
+    <div class="kpi-card"><div class="label">Arrecadado</div><div class="value">${fmt(arr)}</div><div class="sub">${fmtPct((arr/meta)*100)} da meta</div></div>
+    <div class="kpi-card orange"><div class="label">Gasto (NFs)</div><div class="value">${fmt(gasto)}</div><div class="sub">Publicadas + Conciliadas</div></div>
+    <div class="kpi-card green"><div class="label">Saldo disponível</div><div class="value">${fmt(saldo)}</div><div class="sub">para próximas NFs</div></div>`;
+
+  document.querySelector('#finBlocos tbody').innerHTML = DB.blocos.map(b => {
+    const arrB = doacoesDoBloco(b.id).reduce((s,d)=>s+d.valor,0);
+    const gastoB = nfsDoBloco(b.id).filter(n=>['Publicada','Conciliada'].includes(n.status)).reduce((s,n)=>s+n.valor,0);
+    const pctCap = (arrB/b.valor_meta)*100;
+    const status = b.status === 'concluido' ? '<span class="pill pill-success">Concluído</span>' :
+                   b.status === 'em_andamento' ? '<span class="pill pill-warn">Em andamento</span>' :
+                   '<span class="pill pill-muted">Planejado</span>';
+    return `<tr>
+      <td><a href="#" onclick="navigate('bloco','${b.id}');return false;"><b>${b.tag}</b> · ${b.nome}</a></td>
+      <td class="num">${fmt(b.valor_meta)}</td>
+      <td class="num">${fmt(arrB)}</td>
+      <td class="num">${fmt(gastoB)}</td>
+      <td class="num">${fmt(arrB - gastoB)}</td>
+      <td class="num">${fmtPct(pctCap)}</td>
+      <td class="num">${b.execucao_pct}%</td>
+      <td>${status}</td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('finModalidade').innerHTML = ['LIR_PJ','LIR_PF','VAKINHA'].map(m => {
+    const total = DB.doacoes.filter(d => d.modalidade === m).reduce((s,d)=>s+d.valor,0);
+    const ndoad = [...new Set(DB.doacoes.filter(d=>d.modalidade===m).map(d=>d.doador))].length;
+    const pct = (total/arr)*100;
+    return `<div style="margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+        <span><b>${m}</b> (${ndoad} doadores)</span>
+        <span><b>${fmt(total)}</b> · ${fmtPct(pct)}</span>
+      </div>
+      <div class="thermometer-bar"><div class="thermometer-fill" style="width:${pct}%"></div></div>
+    </div>`;
+  }).join('');
+
+  const cats = [...new Set(DB.notas_fiscais.map(n => n.categoria))];
+  document.getElementById('finCategoria').innerHTML = cats.map(c => {
+    const total = DB.notas_fiscais.filter(n => n.categoria === c && ['Publicada','Conciliada'].includes(n.status)).reduce((s,n)=>s+n.valor,0);
+    const pct = gasto > 0 ? (total/gasto)*100 : 0;
+    return `<div style="margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+        <span><b>${c}</b></span>
+        <span><b>${fmt(total)}</b> · ${fmtPct(pct)}</span>
+      </div>
+      <div class="thermometer-bar"><div class="thermometer-fill" style="width:${pct}%;background:var(--verde-montanha)"></div></div>
+    </div>`;
+  }).join('');
+
+  const meses = ['2026-01','2026-02','2026-03','2026-04','2026-05'];
+  document.getElementById('finFluxo').innerHTML = `<table>
+    <thead><tr><th>Mês</th><th class="num">Entradas</th><th class="num">Saídas</th><th class="num">Saldo do mês</th><th class="num">Acumulado</th></tr></thead>
+    <tbody>${(()=>{
+      let acum = 0;
+      return meses.map(m => {
+        const ent = DB.doacoes.filter(d => d.data.startsWith(m)).reduce((s,d)=>s+d.valor,0);
+        const sai = DB.notas_fiscais.filter(n => n.data.startsWith(m) && ['Publicada','Conciliada'].includes(n.status)).reduce((s,n)=>s+n.valor,0);
+        const saldo = ent - sai;
+        acum += saldo;
+        return `<tr><td>${m}</td><td class="num">${fmt(ent)}</td><td class="num">${fmt(sai)}</td><td class="num" style="color:${saldo>=0?'var(--success)':'var(--danger)'}">${fmt(saldo)}</td><td class="num"><b>${fmt(acum)}</b></td></tr>`;
+      }).join('');
+    })()}</tbody></table>`;
+}
+
+// =========================================================
+// RENDER · NFs
+// =========================================================
+function renderNFs(){
+  const blocoSel = document.getElementById('nfFilterBloco');
+  if (blocoSel.children.length <= 1){
+    DB.blocos.forEach(b => {
+      const o = document.createElement('option');
+      o.value = b.id; o.textContent = `${b.tag} · ${b.nome}`;
+      blocoSel.appendChild(o);
+    });
+  }
+  const fb = blocoSel.value;
+  const fc = document.getElementById('nfFilterCat').value;
+  const fs = document.getElementById('nfFilterStatus').value;
+  const ft = document.getElementById('nfFilterText').value.toLowerCase();
+  const filtered = DB.notas_fiscais.filter(n =>
+    (!fb || n.bloco === fb) && (!fc || n.categoria === fc) && (!fs || n.status === fs) &&
+    (!ft || (n.fornecedor.toLowerCase().includes(ft) || n.cnpj.includes(ft) || n.etapa.toLowerCase().includes(ft) || n.numero.includes(ft)))
+  );
+  const total = filtered.reduce((s,n) => s+n.valor, 0);
+  document.getElementById('nfsKPIs').innerHTML = `
+    <div class="kpi-card"><div class="label">NFs exibidas</div><div class="value">${filtered.length}</div><div class="sub">após filtros</div></div>
+    <div class="kpi-card green"><div class="label">Valor exibido</div><div class="value">${fmt(total)}</div><div class="sub">soma dos filtrados</div></div>
+    <div class="kpi-card"><div class="label">Publicadas</div><div class="value">${filtered.filter(n=>['Publicada','Conciliada'].includes(n.status)).length}</div><div class="sub">já auditáveis</div></div>
+    <div class="kpi-card orange"><div class="label">Pendentes</div><div class="value">${filtered.filter(n=>n.status==='Pendente'||n.status==='Aprovada').length}</div><div class="sub">aguardando publicação</div></div>`;
+
+  document.querySelector('#nfTable tbody').innerHTML = filtered.map(n => {
+    const b = getBloco(n.bloco);
+    return `<tr>
+      <td><b><a href="#" onclick="showNF('${n.numero}');return false;">${n.numero}</a></b></td>
+      <td>${n.data}</td>
+      <td>${n.fornecedor}<br><span class="small">${n.cnpj}</span></td>
+      <td class="num">${fmtMoeda(n.valor)}</td>
+      <td><a href="#" onclick="navigate('bloco','${n.bloco}');return false;">${n.bloco}</a><br><span class="small">${b.nome}</span></td>
+      <td>${n.categoria}<br><span class="small">${n.etapa}</span></td>
+      <td><span class="pill pill-${n.status === 'Publicada' ? 'success' : n.status === 'Conciliada' ? 'info' : n.status === 'Aprovada' ? 'warn' : 'muted'}">${n.status}</span></td>
+      <td><a href="#" onclick="showNF('${n.numero}');return false;">📄 Ver</a></td>
+    </tr>`;
+  }).join('') || `<tr><td colspan="8" style="text-align:center;padding:24px;color:var(--muted)">Nenhuma NF com os filtros aplicados.</td></tr>`;
+}
+
+// =========================================================
+// RENDER · EVIDÊNCIAS
+// =========================================================
+function renderEvidencias(){
+  const blocoSel = document.getElementById('evFilterBloco');
+  if (blocoSel.children.length <= 1){
+    DB.blocos.forEach(b => {
+      const o = document.createElement('option');
+      o.value = b.id; o.textContent = `${b.tag} · ${b.nome}`;
+      blocoSel.appendChild(o);
+    });
+  }
+  const fb = blocoSel.value;
+  const ft = document.getElementById('evFilterTipo').value;
+  const filtered = DB.evidencias.filter(e => (!fb || e.bloco === fb) && (!ft || e.tipo === ft));
+  document.getElementById('evGallery').innerHTML = filtered.map(e => {
+    const b = getBloco(e.bloco);
+    return `<div class="gallery-item" onclick="showEvidencia(${e.id})" ${b.foto ? `style="background-image:url('${b.foto}')"` : ''}>
+      <span class="gallery-icon">${e.icon} ${e.tipo.toUpperCase()}</span>
+      <div class="gallery-cap"><strong>${b.tag}</strong> · ${e.titulo}<br><span style="opacity:0.7;font-size:10px">${e.data}</span></div>
+    </div>`;
+  }).join('') || '<p class="small">Nenhuma evidência com os filtros aplicados.</p>';
+}
+
+// =========================================================
+// RENDER · DOADOR (login demo + LGPD)
+// =========================================================
+let currentDoador = null;
+function loginDoador(){
+  const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+  const dor = DB.doadores.find(d => d.email === email);
+  if (!dor){ alert('E-mail não encontrado. Demonstração — use: maria@email.com · esg@xyz.com.br · joao@email.com'); return; }
+  currentDoador = dor;
+  document.getElementById('doadorLogin').style.display = 'none';
+  document.getElementById('doadorPanel').style.display = 'block';
+  renderDoadorPanel();
+}
+function logoutDoador(){
+  currentDoador = null;
+  const lg = document.getElementById('doadorLogin'); if (lg) lg.style.display = 'block';
+  const pn = document.getElementById('doadorPanel'); if (pn) pn.style.display = 'none';
+}
+function renderDoador(){
+  if (currentDoador){
+    document.getElementById('doadorLogin').style.display = 'none';
+    document.getElementById('doadorPanel').style.display = 'block';
+    renderDoadorPanel();
+  } else {
+    document.getElementById('doadorLogin').style.display = 'block';
+    document.getElementById('doadorPanel').style.display = 'none';
+  }
+}
+function renderDoadorPanel(){
+  const d = currentDoador;
+  if (!d) return;
+  const minhas = DB.doacoes.filter(x => x.doador === d.id);
+  const totalDoado = minhas.reduce((s,x)=>s+x.valor,0);
+  const blocosUnicos = [...new Set(minhas.map(x=>x.bloco))];
+  document.getElementById('doadorTitle').innerHTML = `Olá, <span class="accent">${d.nome.split(' ')[0]}</span>`;
+  document.getElementById('doadorMeta').textContent = `${d.perfil} · ${d.email} (demonstração)`;
+  document.getElementById('doadorKPIs').innerHTML = `
+    <div class="kpi-card green"><div class="label">Total doado</div><div class="value">${fmt(totalDoado)}</div><div class="sub">${minhas.length} doações</div></div>
+    <div class="kpi-card"><div class="label">Pacotes apoiados</div><div class="value">${blocosUnicos.length}</div><div class="sub">de 5 disponíveis</div></div>
+    <div class="kpi-card orange"><div class="label">Recibos LIR</div><div class="value">${minhas.filter(x=>x.modalidade.startsWith('LIR')).length}</div><div class="sub">p/ declaração de IR</div></div>
+    <div class="kpi-card green"><div class="label">Próxima atualização</div><div class="value" style="font-size:18px">a cada etapa</div><div class="sub">da obra</div></div>`;
+
+  document.getElementById('doadorDoacoes').innerHTML = minhas.map(x => {
+    const b = getBloco(x.bloco);
+    const totalBloco = doacoesDoBloco(x.bloco).reduce((s,y)=>s+y.valor,0);
+    const pct = (x.valor/totalBloco)*100;
+    return `<div class="donor-row" style="padding:12px 0">
+      <div>
+        <div class="donor-name"><a href="#" onclick="navigate('bloco','${b.id}');return false;">${b.tag} · ${b.nome}</a></div>
+        <div class="small">${x.data} · ${x.modalidade} · ${x.recibo}</div>
+      </div>
+      <div class="donor-vals">
+        <div class="donor-val">${fmtMoeda(x.valor)}</div>
+        <div class="donor-pct"><b style="color:var(--abobora)">${fmtPct(pct)}</b> deste pacote</div>
+      </div>
+    </div>`;
+  }).join('') || '<p class="small">Você ainda não tem doações registradas.</p>';
+
+  let kgT=0, co2T=0, catT=0;
+  blocosUnicos.forEach(bid => {
+    const b = getBloco(bid);
+    const myVal = minhas.filter(x => x.bloco === bid).reduce((s,y)=>s+y.valor,0);
+    const totalBloco = doacoesDoBloco(bid).reduce((s,y)=>s+y.valor,0);
+    const pct = myVal / totalBloco;
+    kgT += b.impacto_anual.kg * pct;
+    co2T += b.impacto_anual.co2 * pct;
+    catT += b.impacto_anual.catadores_apoiados * pct;
+  });
+  document.getElementById('doadorImpacto').innerHTML = `
+    <div class="kpi-grid" style="margin-top:4px">
+      <div class="kpi-card green"><div class="label">Kg desviados / ano</div><div class="value">${Math.round(kgT).toLocaleString('pt-BR')}</div><div class="sub">atribuídos a você</div></div>
+      <div class="kpi-card"><div class="label">CO₂ evitado / ano</div><div class="value">${Math.round(co2T).toLocaleString('pt-BR')} kg</div><div class="sub">atribuídos a você</div></div>
+      <div class="kpi-card orange"><div class="label">Catadores apoiados</div><div class="value">${catT.toFixed(1)}</div><div class="sub">equivalente proporcional</div></div>
+    </div>
+    <p class="small" style="margin-top:12px">Números <strong>atribuídos pró-rata</strong> — utilizáveis em relato GRI, Pacto Global e relatórios ESG (projeção pós-operação da sede).</p>`;
+
+  const evs = DB.evidencias.filter(e => blocosUnicos.includes(e.bloco)).slice(0,6);
+  document.getElementById('doadorEvidencias').innerHTML = evs.map(e => {
+    const b = getBloco(e.bloco);
+    return `<div class="gallery-item" onclick="showEvidencia(${e.id})" ${b.foto ? `style="background-image:url('${b.foto}')"` : ''}>
+      <span class="gallery-icon">${e.icon} ${e.tipo.toUpperCase()}</span>
+      <div class="gallery-cap"><strong>${b.tag}</strong><br>${e.titulo}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('doadorRecibos').innerHTML = minhas.map(x => `
+    <div style="padding:8px 0;border-bottom:1px solid var(--border)">
+      <div style="font-size:13px"><b>${x.recibo}</b></div>
+      <div class="small">${x.data} · ${fmtMoeda(x.valor)}</div>
+      <a href="#" onclick="generateRecibo('${x.recibo}');return false;" style="font-size:11px">📄 Baixar</a>
+    </div>`).join('') || '<p class="small">Sem recibos.</p>';
+
+  const chk = document.getElementById('doadorPublic');
+  chk.checked = d.publico;
+  chk.onchange = e => { d.publico = e.target.checked; alert(d.publico ? 'Você agora aparece publicamente (consentimento LGPD registrado).' : 'Você foi anonimizado nas listas públicas (padrão LGPD).'); };
+}
+
+// =========================================================
+// RENDER · AUDITORIA
+// =========================================================
+function renderAuditoria(){
+  const fe = document.getElementById('auditFilterEnt').value;
+  const fa = document.getElementById('auditFilterAcao').value;
+  const filtered = DB.audit_log.filter(l => (!fe || l.entidade === fe) && (!fa || l.acao === fa));
+  document.getElementById('auditCount').textContent = DB.audit_log.length;
+  document.getElementById('auditNFs').textContent = DB.notas_fiscais.filter(n => ['Publicada','Conciliada'].includes(n.status)).length;
+  document.getElementById('auditMods').textContent = DB.audit_log.filter(l => l.acao === 'update').length;
+  document.getElementById('auditLast').textContent = DB.audit_log[0].ts.split(' ')[0];
+  document.getElementById('auditList').innerHTML = filtered.map(l => `
+    <div class="audit-row">
+      <div class="ts">${l.ts}</div>
+      <div><span class="action">${l.acao}</span></div>
+      <div class="desc"><strong>${l.entidade}</strong> · ${l.desc}</div>
+      <div class="user">${l.user}</div>
+    </div>`).join('') || '<p class="small">Sem eventos com filtros aplicados.</p>';
+}
+
+// =========================================================
+// MODALS
+// =========================================================
+function showNF(numero){
+  const n = DB.notas_fiscais.find(x => x.numero === numero);
+  if (!n) return;
+  const b = getBloco(n.bloco);
+  const hash = (n.numero+'_'+n.data+'_'+n.valor).split('').map(c=>c.charCodeAt(0).toString(16)).join('').slice(0,32);
+  document.getElementById('modal').innerHTML = `
+    <button class="close-x" onclick="closeModal()" aria-label="Fechar">×</button>
+    <h3>NF ${n.numero}</h3>
+    <p class="small" style="margin-bottom:16px">Documento fiscal vinculado ao ${b.tag} · ${b.nome} <em>(demonstração)</em></p>
+    <table>
+      <tr><td><b>Número:</b></td><td>${n.numero}</td></tr>
+      <tr><td><b>Data emissão:</b></td><td>${n.data}</td></tr>
+      <tr><td><b>Fornecedor:</b></td><td>${n.fornecedor}</td></tr>
+      <tr><td><b>CNPJ:</b></td><td>${n.cnpj}</td></tr>
+      <tr><td><b>Valor:</b></td><td><b>${fmtMoeda(n.valor)}</b></td></tr>
+      <tr><td><b>Pacote:</b></td><td><a href="#" onclick="closeModal();navigate('bloco','${n.bloco}');return false;">${n.bloco} · ${b.nome}</a></td></tr>
+      <tr><td><b>Categoria:</b></td><td>${n.categoria}</td></tr>
+      <tr><td><b>Etapa:</b></td><td>${n.etapa}</td></tr>
+      <tr><td><b>Status:</b></td><td><span class="pill pill-${n.status === 'Publicada' ? 'success' : n.status === 'Conciliada' ? 'info' : n.status === 'Aprovada' ? 'warn' : 'muted'}">${n.status}</span></td></tr>
+    </table>
+    <p class="small" style="margin-top:12px">Fluxo: recebida → vinculada → análise → aprovada (4-eyes) → conciliada com extrato → publicada para auditoria pública.</p>
+    <p class="small" style="margin-top:8px"><span class="verified-badge">✓ Auditável</span> Hash: <code style="font-size:10px">${hash}</code></p>
+    <button class="btn btn-dark" onclick="closeModal()" style="margin-top:16px">Fechar</button>`;
+  document.getElementById('modalBg').classList.add('active');
+}
+function showEvidencia(id){
+  const e = DB.evidencias.find(x => x.id === id);
+  if (!e) return;
+  const b = getBloco(e.bloco);
+  document.getElementById('modal').innerHTML = `
+    <button class="close-x" onclick="closeModal()" aria-label="Fechar">×</button>
+    <div style="background:var(--grad-marca);${b.foto ? `background-image:url('${b.foto}');background-size:cover;background-position:center;` : ''}aspect-ratio:1.6/1;border-radius:12px;display:flex;align-items:flex-end;justify-content:center;margin-bottom:16px"><span style="background:rgba(1,59,45,.7);color:#fff;padding:6px 14px;border-radius:8px;font-size:14px;letter-spacing:.04em;margin-bottom:14px">${e.icon} ${e.tipo}</span></div>
+    <h3>${e.titulo}</h3>
+    <p class="small">${e.data} · ${e.tipo} · vinculada a <a href="#" onclick="closeModal();navigate('bloco','${b.id}');return false;">${b.tag} · ${b.nome}</a></p>
+    <p style="margin-top:12px;font-size:13px">Capturada em campo e publicada após verificação. Faz parte da prestação de contas oficial do projeto SEI ${DB.projeto.sei}. <em>(Pré-visualização ilustrativa — demonstração.)</em></p>
+    <button class="btn btn-dark" onclick="closeModal()" style="margin-top:16px">Fechar</button>`;
+  document.getElementById('modalBg').classList.add('active');
+}
+function generateRecibo(numero){
+  const d = DB.doacoes.find(x => x.recibo === numero);
+  if (!d) return;
+  const dor = getDoador(d.doador);
+  const b = getBloco(d.bloco);
+  const hash = (d.recibo+'_'+d.valor).split('').map(c=>c.charCodeAt(0).toString(16)).join('').slice(0,40);
+  const txt = `INSTITUTO RECICLA+ RIBEIRÃO PRETO
+Cooperativa Recicla Ribeirão MRM (CRRM)
+Projeto SEI ${DB.projeto.sei}
+
+** DOCUMENTO DE DEMONSTRAÇÃO — SEM VALIDADE FISCAL **
+
+============================================================
+RECIBO DE DOAÇÃO ${d.recibo}
+Lei 14.260/2021 · LIR · ${d.modalidade}
+============================================================
+
+Doador:        ${dor.nome}
+${dor.cnpj ? 'CNPJ:          ' + dor.cnpj : 'CPF:           ' + (dor.cpf||'(anonimizado)')}
+Email:         ${dor.email}
+
+Valor doado:   ${fmtMoeda(d.valor)}
+Data:          ${d.data}
+Modalidade:    ${d.modalidade}
+
+Destinação:    ${b.tag} · ${b.nome}
+Projeto:       ${DB.projeto.nome}
+Vigência:      ${DB.projeto.vigencia}
+
+============================================================
+Modelo de recibo (será hábil para a declaração de IR quando
+emitido com dados reais e conta de captação oficial).
+Hash de integridade: ${hash}
+============================================================`;
+  const blob = new Blob([txt], {type:'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = numero + '.txt'; a.click();
+}
+function downloadCSV(tipo){
+  let header, lines;
+  if (tipo === 'financeiro'){
+    header = 'pacote,nome,meta,arrecadado,gasto,saldo,pct_captado,pct_executado,status';
+    lines = DB.blocos.map(b => {
+      const arr = doacoesDoBloco(b.id).reduce((s,d)=>s+d.valor,0);
+      const g = nfsDoBloco(b.id).filter(n=>['Publicada','Conciliada'].includes(n.status)).reduce((s,n)=>s+n.valor,0);
+      return `${b.id},"${b.nome}",${b.valor_meta},${arr},${g},${arr-g},${((arr/b.valor_meta)*100).toFixed(2)},${b.execucao_pct},${b.status}`;
+    });
+  } else if (tipo === 'nfs'){
+    header = 'numero,data,fornecedor,cnpj,valor,pacote,categoria,etapa,status';
+    lines = DB.notas_fiscais.map(n => `${n.numero},${n.data},"${n.fornecedor}",${n.cnpj},${n.valor},${n.bloco},${n.categoria},"${n.etapa}",${n.status}`);
+  } else {
+    header = 'id_anonimo,perfil,modalidade,valor,pacote,data';
+    lines = DB.doacoes.map(x => `D${String(x.doador).padStart(3,'0')},${getDoador(x.doador).perfil},${x.modalidade},${x.valor},${x.bloco},${x.data}`);
+  }
+  const csv = [header, ...lines].join('\n');
+  const blob = new Blob([csv], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `recicla_crrm_${tipo}_${new Date().toISOString().slice(0,10)}.csv`; a.click();
+}
+function closeModal(){ document.getElementById('modalBg').classList.remove('active'); }
+
+// =========================================================
+// HASH DE INTEGRIDADE (SHA-256 real, quando disponível)
+// =========================================================
+async function computeHash(){
+  const el = document.getElementById('hashAtual');
+  try {
+    const payload = JSON.stringify({
+      blocos: DB.blocos.map(b=>({id:b.id,meta:b.valor_meta,arr:b.valor_arrecadado,exec:b.execucao_pct})),
+      nfs: DB.notas_fiscais.filter(n=>['Publicada','Conciliada'].includes(n.status)),
+      doacoes: DB.doacoes.length, ts: '2026-05-26'
+    });
+    if (window.crypto && crypto.subtle){
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(payload));
+      const hex = Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+      el.textContent = hex;
+    } else {
+      el.textContent = 'sha256:indisponível-neste-navegador (use ambiente seguro/https)';
+    }
+  } catch(err){
+    el.textContent = 'sha256:erro-ao-calcular';
+  }
+}
+
+// =========================================================
+// INIT
+// =========================================================
+window.addEventListener('hashchange', initRouting);
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('nav.main-nav a[data-page]').forEach(a => {
+    a.addEventListener('click', e => { e.preventDefault(); navigate(a.dataset.page); });
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  computeHash();
+  initRouting();
+});
+</script>
+</body>
+</html>
