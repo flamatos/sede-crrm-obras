@@ -76,6 +76,22 @@ img,svg{max-width:100%}
 .rule{width:64px;height:4px;border-radius:4px;background:var(--sol-500);margin:14px auto 0}
 
 /* ====================================================================
+   BARRA DE UTILIDADES (faixa fina · links OFICIAIS EXTERNOS)
+   ==================================================================== */
+.utilbar{
+  background:var(--cinza-900);color:#cdd6dc;font-size:12.5px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.utilbar .wrap{display:flex;align-items:center;flex-wrap:wrap;gap:6px 18px;min-height:38px;padding-top:6px;padding-bottom:6px}
+.utilbar .gov{display:inline-flex;align-items:center;gap:7px;font-weight:600;color:#aeb9c2}
+.utilbar .gov::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sol-400)}
+.utilbar .sep{color:#4a5560}
+.utilbar a.ext{display:inline-flex;align-items:center;gap:5px;color:#eaf3ee;text-decoration:none;font-weight:700;padding:2px 0;border-bottom:1px solid transparent}
+.utilbar a.ext:hover{color:var(--sol-300);border-bottom-color:var(--sol-300)}
+.utilbar a.ext svg{width:12px;height:12px}
+@media(max-width:760px){.utilbar .wrap{gap:4px 12px;font-size:11.5px}.utilbar .sep{display:none}}
+
+/* ====================================================================
    TOPBAR
    ==================================================================== */
 .topbar{
@@ -367,6 +383,70 @@ footer.site .bottom{padding-top:24px;display:flex;justify-content:space-between;
 @media(max-width:560px){.lightbox .lb-nav{width:42px;height:42px;font-size:22px}}
 
 /* ====================================================================
+   SIGNPOST DA JORNADA (Conhecer · Apoiar · Acompanhar)
+   ==================================================================== */
+.journey{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-30px;position:relative;z-index:4}
+.journey .step-j{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--linha);border-radius:14px;padding:14px 18px;box-shadow:var(--sombra-sm);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.journey .step-j:hover{transform:translateY(-3px);box-shadow:var(--sombra)}
+.journey .step-j .num{width:34px;height:34px;flex:none;border-radius:50%;background:var(--grad-marca);color:#fff;font-family:'Dosis';font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center}
+.journey .step-j b{display:block;font-family:'Dosis';font-weight:700;font-size:17px;color:var(--oc-900);line-height:1.1}
+.journey .step-j small{color:var(--suave);font-size:12.5px}
+.journey .step-j.is-acompanhar .num{background:var(--sol-500);color:var(--oc-900)}
+@media(max-width:760px){.journey{grid-template-columns:1fr;margin-top:0}}
+
+/* etiqueta de etapa da jornada nas seções */
+.phase-tag{display:inline-flex;align-items:center;gap:8px;font-family:'Archivo';font-weight:800;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--oc-900);background:var(--sol-300);padding:5px 13px;border-radius:999px;margin-bottom:14px}
+
+/* ====================================================================
+   PACOTES APADRINHÁVEIS (estilo Transparência) no index
+   ==================================================================== */
+.pkgs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:980px){.pkgs-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.pkgs-grid{grid-template-columns:1fr}}
+.pkg-card{background:var(--card);border:1px solid var(--linha);border-radius:var(--radius);box-shadow:var(--sombra-sm);transition:transform .22s,box-shadow .22s,border-color .22s;overflow:hidden;display:flex;flex-direction:column}
+.pkg-card:hover{transform:translateY(-4px);box-shadow:var(--sombra);border-color:var(--linha-forte)}
+.pkg-photo{position:relative;height:120px;background:var(--grad-marca);display:flex;align-items:center;justify-content:center}
+.pkg-photo .icon-bg{font-size:50px}
+.pkg-photo .ov{position:absolute;left:0;right:0;bottom:0;padding:16px 18px 11px;background:linear-gradient(0deg,rgba(1,59,45,.92),transparent)}
+.pkg-photo .ov .t{font-family:'Archivo';font-weight:700;font-size:10.5px;letter-spacing:.12em;color:var(--sol-300);text-transform:uppercase}
+.pkg-photo .ov .n{font-family:'Dosis';font-weight:800;font-size:19px;color:#fff;line-height:1.12;margin-top:2px}
+.pkg-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.pkg-body .tline{font-size:13.5px;color:var(--texto);margin-bottom:13px;min-height:38px}
+.pkg-thermo{height:9px;border-radius:6px;background:var(--prata-200);overflow:hidden}
+.pkg-thermo > i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--sol-500),var(--sol-300))}
+.pkg-cap{display:flex;justify-content:space-between;margin-top:6px;font-size:11.5px;color:var(--suave)}
+.pkg-cap b{color:var(--verde-montanha)}
+.pkg-meta{display:flex;gap:6px;flex-wrap:wrap;margin:13px 0}
+.pkg-meta span{background:var(--verde-claro);color:var(--oc-900);font-weight:700;font-size:11px;padding:4px 10px;border-radius:999px;border:1px solid var(--linha-forte)}
+.pkg-card .pkg-cta{margin-top:auto;display:inline-block;text-align:center;background:var(--oc-900);color:#fff;padding:11px 16px;border-radius:11px;text-decoration:none;font-weight:700;font-size:14px;transition:.2s}
+.pkg-card .pkg-cta:hover{background:var(--oc-800)}
+.pkgs-total{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px;font-size:14px;color:var(--suave)}
+.pkgs-total b{color:var(--oc-900)}
+
+/* detalhamento recolhível (13 itens SINAPI) */
+.collapse{margin-top:26px;border:1px solid var(--linha);border-radius:var(--radius);background:#fff;box-shadow:var(--sombra-sm);overflow:hidden}
+.collapse > summary{cursor:pointer;list-style:none;padding:18px 24px;font-family:'Dosis';font-weight:700;font-size:17px;color:var(--oc-900);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.collapse > summary::-webkit-details-marker{display:none}
+.collapse > summary .chev{transition:transform .2s;color:var(--verde-montanha);font-size:20px;line-height:1}
+.collapse[open] > summary .chev{transform:rotate(90deg)}
+.collapse > summary:hover{background:var(--verde-claro-2)}
+.collapse .collapse-body{padding:0 24px 24px}
+
+/* ====================================================================
+   ACOMPANHAR — CTA forte para transparência
+   ==================================================================== */
+.acompanhar-cta{background:var(--grad-marca);color:#fff;border-radius:var(--radius-lg);padding:54px 40px;position:relative;overflow:hidden;display:grid;grid-template-columns:1.4fr 1fr;gap:30px;align-items:center}
+.acompanhar-cta::before{content:"";position:absolute;inset:0;opacity:.4;background:radial-gradient(600px 400px at 90% -10%,rgba(250,186,44,.30),transparent 60%)}
+.acompanhar-cta > *{position:relative;z-index:1}
+.acompanhar-cta h2{color:#fff;font-size:clamp(24px,3.4vw,36px);font-weight:800;line-height:1.12}
+.acompanhar-cta p{color:#d8f0e6;margin-top:12px;font-size:16.5px}
+.acompanhar-cta .feats{list-style:none;margin-top:18px;display:grid;gap:8px}
+.acompanhar-cta .feats li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#eafaf2}
+.acompanhar-cta .feats li::before{content:"✓";color:var(--sol-300);font-weight:800}
+.acompanhar-cta .side{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+@media(max-width:760px){.acompanhar-cta{grid-template-columns:1fr;padding:40px 26px;text-align:center}.acompanhar-cta .feats li{text-align:left}}
+
+/* ====================================================================
    BENEFÍCIOS PARA EMPRESAS INCENTIVADORAS
    ==================================================================== */
 .benef .card{border-top:4px solid var(--sol-500)}
@@ -422,7 +502,7 @@ footer.site .bottom{padding-top:24px;display:flex;justify-content:space-between;
    IMPRESSÃO / SALVAR COMO PDF
    ==================================================================== */
 @media print{
-  .topbar,.wa-float,.hero .actions,.cta-final .actions,.gallery .shot:nth-child(n+5),
+  .topbar,.utilbar,.journey,.wa-float,.hero .actions,.cta-final .actions,.gallery .shot:nth-child(n+5),
   .lightbox,.nav,.btn-ghost{display:none !important}
   .hero{background:var(--oc-900) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   section{padding:24px 0;break-inside:avoid}
@@ -434,21 +514,34 @@ footer.site .bottom{padding-top:24px;display:flex;justify-content:space-between;
 </head>
 <body>
 
-<!-- ============================== TOPBAR ============================== -->
+<!-- ============== BARRA DE UTILIDADES (LINKS OFICIAIS EXTERNOS) ============== -->
+<div class="utilbar">
+  <div class="wrap">
+    <span class="gov">Programa oficial do Governo Federal — MMA</span>
+    <span class="sep">·</span>
+    <a class="ext" href="https://parcerias.transferegov.sistema.gov.br/ep-atos-prep-web/atos-prep/proposta/edicao/83508" target="_blank" rel="noopener">Transferegov <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    <span class="sep">·</span>
+    <a class="ext" href="https://www.in.gov.br/en/web/dou/-/portaria-sqa/mma-n-5-de-23-de-outubro-de-2025-665828612" target="_blank" rel="noopener">Portaria (DOU) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    <span class="sep">·</span>
+    <a class="ext" href="https://projeto-recicla-mais-lir.com/" target="_blank" rel="noopener">Projeto principal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+  </div>
+</div>
+
+<!-- ============================== TOPBAR (NAV 100% INTERNO) ============================== -->
 <div class="topbar">
   <div class="wrap">
     <a class="brand" href="#top">
       <img class="logo-img" src="assets/reciclamais.png" alt="Instituto Recicla+ Ribeirão Preto">
     </a>
     <nav class="nav">
-      <a href="#objeto">Objeto</a>
+      <a href="#top">Início</a>
+      <a href="#objeto">O Projeto</a>
       <a href="#galeria">Galeria</a>
-      <a href="#lir">Incentivo Fiscal</a>
+      <a href="#pacotes">Pacotes</a>
       <a href="#como-apoiar">Como apoiar</a>
-      <a href="#dados">Dados Oficiais</a>
-      <a href="transparencia.html">Transparência</a>
-      <a href="https://projeto-recicla-mais-lir.com/" target="_blank" rel="noopener">Projeto Recicla+ ↗</a>
-      <a class="nav-cta" href="#contato">Apoiar o projeto</a>
+      <a href="#dados">Dados oficiais</a>
+      <a href="transparencia.html">Acompanhar</a>
+      <a class="nav-cta" href="#contato">Apoiar</a>
     </nav>
   </div>
 </div>
@@ -495,6 +588,15 @@ footer.site .bottom{padding-top:24px;display:flex;justify-content:space-between;
   </div>
 </div>
 
+<!-- ===== SIGNPOST DA JORNADA: CONHECER · APOIAR · ACOMPANHAR ===== -->
+<div class="wrap" style="margin-top:30px">
+  <nav class="journey" aria-label="Jornada do apoiador">
+    <a class="step-j" href="#objeto"><span class="num">1</span><span><b>Conhecer</b><small>O projeto, a obra e a galeria</small></span></a>
+    <a class="step-j" href="#pacotes"><span class="num">2</span><span><b>Apoiar</b><small>Pacotes + incentivo fiscal no IR</small></span></a>
+    <a class="step-j is-acompanhar" href="transparencia.html"><span class="num">3</span><span><b>Acompanhar</b><small>Transparência da obra, real a real</small></span></a>
+  </nav>
+</div>
+
 <!-- ============================== RESUMO (3 PAPÉIS) ============================== -->
 <section id="resumo">
   <div class="wrap">
@@ -530,6 +632,7 @@ footer.site .bottom{padding-top:24px;display:flex;justify-content:space-between;
 <section id="objeto">
   <div class="wrap">
     <div class="sec-head">
+      <span class="phase-tag">1 · Conhecer</span>
       <span class="eyebrow">Objeto da proposta</span>
       <h2>O galpão que dá escala à reciclagem</h2>
       <p class="lead">Construção da sede própria da CRRM — galpão industrial de aproximadamente <b>386,60 m²</b> para triagem e beneficiamento de recicláveis, com condições dignas e seguras de trabalho, em conformidade com as normas técnicas e a Portaria GM/MMA nº 1.250/2024.</p>
@@ -564,16 +667,88 @@ footer.site .bottom{padding-top:24px;display:flex;justify-content:space-between;
   </div>
 </section>
 
-<!-- ============================== ESCOPO DA OBRA ============================== -->
-<section id="escopo">
+<!-- ============================== PACOTES APADRINHÁVEIS (APOIAR) ============================== -->
+<section id="pacotes">
   <div class="wrap">
-    <div class="panel">
-      <div class="wrap" style="padding:0 40px">
-        <div class="sec-head">
-          <span class="eyebrow">Meta IV · Infraestrutura física</span>
-          <h2>Escopo da obra — 13 itens</h2>
-          <p class="lead">Orçamento por etapa construtiva, com base na tabela SINAPI, conforme o Plano de Trabalho.</p>
+    <div class="sec-head">
+      <span class="phase-tag">2 · Apoiar</span>
+      <span class="eyebrow">Apadrinhe &amp; acompanhe</span>
+      <h2>5 pacotes apadrináveis da obra</h2>
+      <p class="lead">A Meta IV (infraestrutura física · R$ 1.690.000, base SINAPI) foi agrupada em <b>5 pacotes coerentes</b>. Escolha um pacote para apoiar — e acompanhe sua execução físico-financeira na página de Transparência.</p>
+    </div>
+
+    <div class="pkgs-grid">
+      <article class="pkg-card">
+        <div class="pkg-photo"><span class="icon-bg">🏗️</span><div class="ov"><div class="t">Pacote 01</div><div class="n">Fundação &amp; Terreno</div></div></div>
+        <div class="pkg-body">
+          <p class="tline">A base de tudo: terraplenagem, locação e fundação do galpão.</p>
+          <div class="pkg-thermo"><i style="width:70%"></i></div>
+          <div class="pkg-cap"><span><b>R$ 215.000</b> de R$ 307.500</span><span>70% captado</span></div>
+          <div class="pkg-meta"><span>R$ 10 mil a R$ 60 mil</span><span>30-60 dias</span></div>
+          <a class="pkg-cta" href="transparencia.html#bloco/P01">Ver detalhes →</a>
         </div>
+      </article>
+      <article class="pkg-card">
+        <div class="pkg-photo"><span class="icon-bg">🏛️</span><div class="ov"><div class="t">Pacote 02</div><div class="n">Estrutura Metálica &amp; Cobertura</div></div></div>
+        <div class="pkg-body">
+          <p class="tline">O esqueleto do galpão: estrutura metálica, mezanino e cobertura.</p>
+          <div class="pkg-thermo"><i style="width:53%"></i></div>
+          <div class="pkg-cap"><span><b>R$ 198.000</b> de R$ 376.120</span><span>53% captado</span></div>
+          <div class="pkg-meta"><span>R$ 20 mil a R$ 100 mil</span><span>45-75 dias</span></div>
+          <a class="pkg-cta" href="transparencia.html#bloco/P02">Ver detalhes →</a>
+        </div>
+      </article>
+      <article class="pkg-card">
+        <div class="pkg-photo"><span class="icon-bg">🧱</span><div class="ov"><div class="t">Pacote 03</div><div class="n">Vedações &amp; Acabamentos</div></div></div>
+        <div class="pkg-body">
+          <p class="tline">Fechamento e acabamento: alvenaria, pisos e revestimentos.</p>
+          <div class="pkg-thermo"><i style="width:35%"></i></div>
+          <div class="pkg-cap"><span><b>R$ 142.000</b> de R$ 406.512</span><span>35% captado</span></div>
+          <div class="pkg-meta"><span>R$ 15 mil a R$ 80 mil</span><span>45-90 dias</span></div>
+          <a class="pkg-cta" href="transparencia.html#bloco/P03">Ver detalhes →</a>
+        </div>
+      </article>
+      <article class="pkg-card">
+        <div class="pkg-photo"><span class="icon-bg">⚡</span><div class="ov"><div class="t">Pacote 04</div><div class="n">Instalações &amp; Segurança</div></div></div>
+        <div class="pkg-body">
+          <p class="tline">Infraestrutura técnica: hidro, elétrica, SPDA e incêndio.</p>
+          <div class="pkg-thermo"><i style="width:60%"></i></div>
+          <div class="pkg-cap"><span><b>R$ 255.000</b> de R$ 428.532</span><span>60% captado</span></div>
+          <div class="pkg-meta"><span>R$ 15 mil a R$ 70 mil</span><span>45-75 dias</span></div>
+          <a class="pkg-cta" href="transparencia.html#bloco/P04">Ver detalhes →</a>
+        </div>
+      </article>
+      <article class="pkg-card">
+        <div class="pkg-photo"><span class="icon-bg">🚪</span><div class="ov"><div class="t">Pacote 05</div><div class="n">Esquadrias &amp; Administração</div></div></div>
+        <div class="pkg-body">
+          <p class="tline">Fechamentos e gestão da obra: esquadrias e administração local.</p>
+          <div class="pkg-thermo"><i style="width:56%"></i></div>
+          <div class="pkg-cap"><span><b>R$ 96.000</b> de R$ 171.336</span><span>56% captado</span></div>
+          <div class="pkg-meta"><span>R$ 10 mil a R$ 40 mil</span><span>30-60 dias</span></div>
+          <a class="pkg-cta" href="transparencia.html#bloco/P05">Ver detalhes →</a>
+        </div>
+      </article>
+      <article class="pkg-card" style="background:linear-gradient(180deg,var(--verde-claro-2),var(--verde-claro));border-style:dashed">
+        <div class="pkg-body" style="justify-content:center;text-align:center;gap:14px">
+          <div style="font-size:40px">🤝</div>
+          <h3 style="font-family:'Dosis';font-weight:800;font-size:21px;color:var(--oc-900)">Apoiar a obra toda</h3>
+          <p class="tline" style="min-height:auto">Prefere contribuir sem escolher um pacote? Sua destinação é distribuída pró-rata entre os pacotes em captação.</p>
+          <a class="pkg-cta" href="#como-apoiar" style="background:var(--sol-500);color:var(--oc-900)">Como apoiar →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="pkgs-total">
+      <span>Soma dos 5 pacotes = <b>R$ 1.690.000</b> (Meta IV · base SINAPI)</span>
+      <span class="sep" style="color:var(--linha-forte)">·</span>
+      <a href="transparencia.html" style="font-weight:700;color:var(--verde-montanha);text-decoration:none">Ver captação e execução em tempo de prestação de contas →</a>
+    </div>
+
+    <!-- DETALHAMENTO RECOLHÍVEL · 13 itens SINAPI (secundário) -->
+    <details class="collapse">
+      <summary><span>Ver detalhamento da obra — 13 itens SINAPI (Meta IV)</span><span class="chev">›</span></summary>
+      <div class="collapse-body">
+        <p class="lead" style="color:var(--suave);font-size:15px;margin:0 0 16px">Orçamento por etapa construtiva, base SINAPI, conforme o Plano de Trabalho. Os 13 itens estão agrupados nos 5 pacotes acima.</p>
         <div class="table-wrap">
           <table class="obra">
             <thead>
@@ -603,8 +778,8 @@ footer.site .bottom{padding-top:24px;display:flex;justify-content:space-between;
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
           <div>Metas administrativas (custeio — coordenação, ART/RRT, fiscalização, auditoria, contabilidade e comunicação): <b>R$ 165.000,00</b>.</div>
         </div>
-      </div>
-    </div>
+      </div><!-- /collapse-body -->
+    </details>
   </div>
 </section>
 
@@ -660,6 +835,7 @@ footer.site .bottom{padding-top:24px;display:flex;justify-content:space-between;
     <div class="panel-dark">
       <div class="wrap" style="padding:0 40px">
         <div class="sec-head">
+          <span class="phase-tag" style="background:var(--sol-400)">2 · Apoiar</span>
           <span class="eyebrow">Lei de Incentivo à Reciclagem</span>
           <h2>Apoie a obra com dedução direta no IR</h2>
           <p class="lead">Para propostas com obras civis, a captação mínima é de <b>50%</b> (Art. 24, II da Portaria GM/MMA nº 1.250/2024). Você redireciona parte do imposto que já pagaria.</p>
@@ -835,6 +1011,33 @@ footer.site .bottom{padding-top:24px;display:flex;justify-content:space-between;
         <p style="margin-top:8px">Coleta seletiva, educação ambiental e incubação da cooperativa.</p>
         <a class="site-link" href="https://institutoreciclamais.com.br" target="_blank" rel="noopener">Visitar website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ACOMPANHAR (CTA TRANSPARÊNCIA) ============================== -->
+<section id="acompanhar" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="acompanhar-cta">
+      <div>
+        <span class="phase-tag" style="background:var(--sol-300)">3 · Acompanhar</span>
+        <h2>Acompanhe a obra com transparência</h2>
+        <p>Cada real aportado é rastreável: do aporte à nota fiscal, etapa a etapa. Veja a captação de cada pacote, o financeiro auditável, as notas fiscais e as evidências em campo.</p>
+        <ul class="feats">
+          <li>Captação e execução físico-financeira de cada pacote</li>
+          <li>Notas fiscais auditáveis (8 estados de validação)</li>
+          <li>Evidências da obra e trilha de auditoria com hash de integridade</li>
+          <li>Área do doador com recibos LIR e impacto pró-rata</li>
+        </ul>
+      </div>
+      <div class="side">
+        <a class="btn btn-sol" href="transparencia.html" style="justify-content:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          Abrir a Transparência
+        </a>
+        <a class="btn btn-ghost" href="transparencia.html#financeiro" style="justify-content:center">Transparência financeira</a>
+        <a class="btn btn-ghost" href="transparencia.html#nfs" style="justify-content:center">Notas fiscais</a>
+      </div>
     </div>
   </div>
 </section>

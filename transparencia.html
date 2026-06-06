@@ -98,6 +98,23 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 .demo-banner span{font-weight:500;opacity:.92}
 
 /* ====================================================================
+   BARRA DE UTILIDADES (faixa fina · links OFICIAIS EXTERNOS)
+   ==================================================================== */
+.utilbar{background:var(--cinza-900);color:#cdd6dc;font-size:12.5px;border-bottom:1px solid rgba(255,255,255,.06)}
+.utilbar .wrap{display:flex;align-items:center;flex-wrap:wrap;gap:6px 18px;min-height:38px;padding-top:6px;padding-bottom:6px}
+.utilbar .gov{display:inline-flex;align-items:center;gap:7px;font-weight:600;color:#aeb9c2}
+.utilbar .gov::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sol-400)}
+.utilbar .sep{color:#4a5560}
+.utilbar a.ext{display:inline-flex;align-items:center;gap:5px;color:#eaf3ee;text-decoration:none;font-weight:700;padding:2px 0;border-bottom:1px solid transparent}
+.utilbar a.ext:hover{color:var(--sol-300);border-bottom-color:var(--sol-300)}
+.utilbar a.ext svg{width:12px;height:12px}
+@media(max-width:760px){.utilbar .wrap{gap:4px 12px;font-size:11.5px}.utilbar .sep{display:none}}
+
+/* link interno "voltar ao Conhecer & Apoiar" no topo */
+.nav-back{display:inline-flex;align-items:center;gap:5px;font-weight:700!important;color:var(--verde-montanha)!important}
+.nav-back:hover{background:var(--verde-claro)!important}
+
+/* ====================================================================
    TOPBAR (idêntica em estilo ao site de Obras)
    ==================================================================== */
 .topbar{
@@ -372,19 +389,32 @@ footer.site .bottom{padding-top:22px;display:flex;justify-content:space-between;
   <b>DEMONSTRAÇÃO</b> — dados ilustrativos (doadores, doações e NFs são fictícios). <span>Substituídos por dados reais à medida que a captação e a obra avançam.</span>
 </div>
 
-<!-- ===== TOPBAR ===== -->
+<!-- ============== BARRA DE UTILIDADES (LINKS OFICIAIS EXTERNOS) ============== -->
+<div class="utilbar">
+  <div class="wrap">
+    <span class="gov">Programa oficial do Governo Federal — MMA</span>
+    <span class="sep">·</span>
+    <a class="ext" href="https://parcerias.transferegov.sistema.gov.br/ep-atos-prep-web/atos-prep/proposta/edicao/83508" target="_blank" rel="noopener">Transferegov <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    <span class="sep">·</span>
+    <a class="ext" href="https://www.in.gov.br/en/web/dou/-/portaria-sqa/mma-n-5-de-23-de-outubro-de-2025-665828612" target="_blank" rel="noopener">Portaria (DOU) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    <span class="sep">·</span>
+    <a class="ext" href="https://projeto-recicla-mais-lir.com/" target="_blank" rel="noopener">Projeto principal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+  </div>
+</div>
+
+<!-- ===== TOPBAR (NAV 100% INTERNO) ===== -->
 <div class="topbar">
   <div class="wrap">
     <a class="brand" href="#home" onclick="navigate('home');return false;" aria-label="Início — Recicla+ / CRRM">
       <img class="logo-img" src="assets/reciclamais.png" alt="Instituto Recicla+ Ribeirão Preto">
     </a>
     <nav class="main-nav" aria-label="Navegação principal">
-      <a data-page="home" onclick="navigate('home');return false;">Pacotes</a>
+      <a class="cross nav-back" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Conhecer &amp; Apoiar</a>
+      <a data-page="home" onclick="navigate('home');return false;">Blocos/Pacotes</a>
       <a data-page="financeiro" onclick="navigate('financeiro');return false;">Financeiro</a>
       <a data-page="nfs" onclick="navigate('nfs');return false;">Notas Fiscais</a>
       <a data-page="evidencias" onclick="navigate('evidencias');return false;">Evidências</a>
       <a data-page="auditoria" onclick="navigate('auditoria');return false;">Auditoria</a>
-      <a class="cross" href="https://flamatos.github.io/sede-crrm-obras/" target="_blank" rel="noopener">Obras<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       <button class="btn-doador" onclick="navigate('doador')">Área do Doador</button>
     </nav>
   </div>
@@ -762,6 +792,7 @@ footer.site .bottom{padding-top:22px;display:flex;justify-content:space-between;
         </div>
         <div class="col">
           <h5>Acesso rápido</h5>
+          <a href="index.html">← Conhecer &amp; Apoiar (entrada)</a>
           <a href="#home" onclick="navigate('home');return false;">Pacotes para apadrinhar</a>
           <a href="#financeiro" onclick="navigate('financeiro');return false;">Transparência financeira</a>
           <a href="#nfs" onclick="navigate('nfs');return false;">Notas fiscais</a>
@@ -770,7 +801,6 @@ footer.site .bottom{padding-top:22px;display:flex;justify-content:space-between;
         </div>
         <div class="col">
           <h5>Links oficiais</h5>
-          <a href="https://flamatos.github.io/sede-crrm-obras/" target="_blank" rel="noopener">Site das Obras ↗</a>
           <a href="https://projeto-recicla-mais-lir.com/" target="_blank" rel="noopener">Projeto principal ↗</a>
           <a href="https://parcerias.transferegov.sistema.gov.br/ep-atos-prep-web/atos-prep/proposta/edicao/83508" target="_blank" rel="noopener">Proposta no Transferegov ↗</a>
           <a href="https://www.in.gov.br/en/web/dou/-/portaria-sqa/mma-n-5-de-23-de-outubro-de-2025-665828612" target="_blank" rel="noopener">Portaria oficial (DOU) ↗</a>
